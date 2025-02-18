@@ -9,9 +9,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        pinky: "#E8E3F2",
+        bluey: "#C4D9F2",
+        greeny: "#BDE9C9",
+        green: "#027223",
+        white: "#FFFFFF",
+        dark: "#3E464F",
       },
+    },
+    fontFamily: {
+      'quicksand': ['var(--font-quicksand)', 'sans-serif']
     },
   },
   plugins: [],
