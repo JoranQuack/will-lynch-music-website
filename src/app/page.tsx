@@ -1,15 +1,15 @@
-import Image from "next/image";
+import Header from "@/components/Header";
 
 export default function Home() {
-  return (
-    <main>
-      <h1>Will Lynch Music</h1>
-      <Image
-        src="logo.svg"
-        alt="Will Lynch Music"
-        width={1280}
-        height={720}
-      />
-    </main>
-  );
+    return (
+        <main>
+            <Header colour="green"/>
+            <p className="text-pinky">will</p>
+            <p className="text-bluey">lynch</p>
+            <p className="text-greeny">music</p>
+            <p className="text-green">is</p>
+            <p className="text-dark">coming</p>
+            <p className="text-white">soon</p>
+        </main>
+    );
 }

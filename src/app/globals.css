@@ -17,3 +17,7 @@
 body {
   font-family: quicksand, sans-serif;
 }
+
+nav a { 
+    @apply hover:opacity-50 duration-200 flex gap-1 items-center;
+}
