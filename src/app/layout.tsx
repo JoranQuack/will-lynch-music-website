@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -19,11 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={quicksand.className} style={{colorScheme: "light"}}>
+    <html
+      lang="en"
+      className={quicksand.className}
+      style={{ colorScheme: "light" }}
+    >
       <body
         className={`${quicksand.variable} antialiased scroll-smooth overflow-x-hidden`}
       >
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
