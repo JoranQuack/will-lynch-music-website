@@ -19,7 +19,16 @@ export default {
     },
     fontFamily: {
       'quicksand': ['var(--font-quicksand)', 'sans-serif']
-    },
+      },
+      keyframes: {
+          'slide-button': {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(0)' },
+          }
+      },
+      animation: {
+          'slide-button': 'slide-button 7s ease-in-out', 
+        },
   },
   plugins: [],
 } satisfies Config;

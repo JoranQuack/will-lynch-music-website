@@ -1,9 +1,12 @@
-import Header from "@/components/Header";
+import Homeslide from "@/components/Homeslide";
 
 export default function Home() {
     return (
         <main>
-            <Header colour="green"/>
+            <section id="home" className="w-screen h-screen">
+                <Homeslide/>
+            </section>
+            
             <p className="text-pinky">will</p>
             <p className="text-bluey">lynch</p>
             <p className="text-greeny">music</p>

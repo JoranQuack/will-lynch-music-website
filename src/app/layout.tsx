@@ -19,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={quicksand.className}>
+    <html lang="en" className={quicksand.className} style={{colorScheme: "light"}}>
       <body
-        className={`${quicksand.variable} antialiased scroll-smooth`}
+        className={`${quicksand.variable} antialiased scroll-smooth overflow-x-hidden`}
       >
         {children}
       </body>
