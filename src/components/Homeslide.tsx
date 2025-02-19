@@ -60,7 +60,7 @@ export default function Homeslide() {
         className={`absolute top-0 left-0 w-screen h-screen -z-10 transition-colors duration-500`}
         style={{ backgroundColor: bgColour }}
       ></div>
-      <Header colour={textColour} />
+      <Header textColour={textColour} />
 
       <div
         id="slide1"
