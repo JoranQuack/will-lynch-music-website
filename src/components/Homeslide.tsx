@@ -72,7 +72,7 @@ export default function Homeslide() {
                     <p className="text-green duration-500" style={{color:textColour}}>Where music comes alive. Explore a world of arrangements that breathe new life into every note and phrase.</p>
                     <a href="/arrangements" className="round-button duration-500" style={{backgroundColor:textColour, color:bgColour}}>EXPLORE ARRANGEMENTS</a>
                 </div>
-                <SVG src="stave.svg" className="ml-72" style={{color:textColour}}/>
+                <SVG src="stave.svg" className="ml-72 duration-500" style={{fill:textColour}}/>
             </div>
             
             <div className="absolute bottom-20 left-36 h-3 flex gap-2">
