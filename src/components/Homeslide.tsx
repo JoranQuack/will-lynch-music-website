@@ -66,9 +66,9 @@ export default function Homeslide() {
         id="slide1"
         className={`absolute w-screen h-screen flex items-center justify-between pl-36 top-0 left-0 ease-in-out duration-500
                 ${slide === 1 ? "opacity-100 translate-x-0 z-10" : ""}
-                ${slide === 2 ? "opacity-100 -translate-x-[110%] z-0" : ""}
-                ${slide === 3 ? "opacity-0 -translate-x-[110%] z-0" : ""}
-                ${slide === 4 ? "opacity-0 -translate-x-[110%] z-0" : ""}`}
+                ${slide === 2 ? "opacity-100 -translate-x-[150%] z-0" : ""}
+                ${slide === 3 ? "opacity-0 -translate-x-[200%] z-0" : ""}
+                ${slide === 4 ? "opacity-0 -translate-x-[200%] z-0" : ""}`}
       >
         <div className="w-2/5 flex flex-col gap-5">
           <p className="text-6xl duration-500" style={{ color: textColour }}>
@@ -100,11 +100,6 @@ export default function Homeslide() {
         className={`absolute w-screen h-screen flex items-center justify-end pr-36 top-0 left-0 duration-500
                 ${slide === 2 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
       >
-        {/* <SVG
-          src="stave.svg"
-          className="duration-500 translate-y-7 overflow-visible -translate-x-[50%]"
-          style={{ fill: textColour }}
-        /> */}
         <div className="w-3/5 flex flex-col gap-5 items-end">
           <p
             className="text-6xl text-right duration-500"
