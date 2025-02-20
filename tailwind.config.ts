@@ -27,7 +27,7 @@ export default {
           }
       },
       animation: {
-          'slide-button': 'slide-button 7s ease-in-out', 
+          'slide-button': 'slide-button 7s linear', 
         },
   },
   plugins: [],
