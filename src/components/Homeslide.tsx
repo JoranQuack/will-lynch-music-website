@@ -21,7 +21,7 @@ export default function Homeslide() {
 
     intervalRef.current = setInterval(() => {
       setSlide((prevSlide) => (prevSlide % 4) + 1);
-    }, 700000);
+    }, 7000);
 
     return () => {
       if (intervalRef.current) {
