@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import SVG from "react-inlinesvg";
+import { useState, useEffect } from 'react';
+import SVG from 'react-inlinesvg';
 
 interface HeaderProps {
   textColour: string;
@@ -11,47 +11,46 @@ export default function Header({ textColour }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () =>
-        setScrolled(window.pageYOffset > 5)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () =>
+        setScrolled(window.pageYOffset > 5),
       );
     }
   }, []);
 
-  const colour = scrolled ? "#027223" : textColour;
-  const bgColour = scrolled ? "#FFFFFF" : "transparent";
+  const colour = scrolled ? '#027223' : textColour;
+  const bgColour = scrolled ? '#FFFFFF' : 'transparent';
 
   return (
     <header
-      className={`w-screen h-20 border-b duration-500
-            flex items-center justify-between px-36 fixed top-0 left-0 z-40`}
+      className={`fixed left-0 top-0 z-40 flex h-20 w-screen items-center justify-between border-b px-36 duration-500`}
       style={{ color: colour, borderColor: colour, backgroundColor: bgColour }}
     >
       <SVG
-        src="logo.svg"
+        src='logo.svg'
         style={{ fill: colour }}
-        className="duration-500 scale-75 -ml-3"
+        className='-ml-3 scale-75 duration-500'
       />
-      <nav className="flex gap-10 font-medium">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#browse">
-          BROWSE{" "}
+      <nav className='flex gap-10 font-medium'>
+        <a href='#home'>HOME</a>
+        <a href='#about'>ABOUT</a>
+        <a href='#browse'>
+          BROWSE{' '}
           <SVG
-            src="down-arrow.svg"
+            src='down-arrow.svg'
             style={{ stroke: colour }}
-            className="duration-500 -mr-2"
-          />{" "}
+            className='-mr-2 duration-500'
+          />{' '}
         </a>
-        <a href="#expertise">
-          EXPERTISE{" "}
+        <a href='#expertise'>
+          EXPERTISE{' '}
           <SVG
-            src="down-arrow.svg"
+            src='down-arrow.svg'
             style={{ stroke: colour }}
-            className="duration-500 -mr-2"
-          />{" "}
+            className='-mr-2 duration-500'
+          />{' '}
         </a>
-        <a href="#contact">CONTACT</a>
+        <a href='#contact'>CONTACT</a>
       </nav>
     </header>
   );

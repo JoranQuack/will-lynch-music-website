@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Header from "./Header";
-import { useState, useEffect, useRef } from "react";
-import SVG from "react-inlinesvg";
+import Header from './Header';
+import { useState, useEffect, useRef } from 'react';
+import SVG from 'react-inlinesvg';
 
 export default function Homeslide() {
   const [slide, setSlide] = useState(1);
-  const [bgColour, setBgColour] = useState("greeny");
-  const [textColour, setTextColour] = useState("green");
+  const [bgColour, setBgColour] = useState('greeny');
+  const [textColour, setTextColour] = useState('green');
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   function handleClick(number: number) {
@@ -33,97 +33,92 @@ export default function Homeslide() {
   useEffect(() => {
     switch (slide) {
       case 1:
-        setBgColour("#BDE9C9");
-        setTextColour("#027223");
+        setBgColour('#BDE9C9');
+        setTextColour('#027223');
         break;
       case 2:
-        setBgColour("#C4D9F2");
-        setTextColour("#3E464F");
+        setBgColour('#C4D9F2');
+        setTextColour('#3E464F');
         break;
       case 3:
-        setBgColour("#3E464F");
-        setTextColour("#BDE9C9");
+        setBgColour('#3E464F');
+        setTextColour('#BDE9C9');
         break;
       case 4:
-        setBgColour("#E8E3F2");
-        setTextColour("#3E464F");
+        setBgColour('#E8E3F2');
+        setTextColour('#3E464F');
         break;
       default:
-        setBgColour("#BDE9C9");
-        setTextColour("#027223");
+        setBgColour('#BDE9C9');
+        setTextColour('#027223');
     }
   }, [slide]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen">
+    <div className='flex h-screen w-screen flex-col items-center justify-center'>
       <div
-        className={`absolute top-0 left-0 w-screen h-screen -z-10 transition-colors duration-500`}
+        className={`absolute left-0 top-0 -z-10 h-screen w-screen transition-colors duration-500`}
         style={{ backgroundColor: bgColour }}
       ></div>
       <Header textColour={textColour} />
 
       <div
-        id="slide1"
-        className={`absolute w-screen h-screen flex items-center justify-between pl-36 top-0 left-0 ease-in-out duration-500 gap-80
-                ${slide === 1 ? "opacity-100 translate-x-0 z-10" : "opacity-0 -translate-x-[118%] z-0"}`}
+        id='slide1'
+        className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-80 pl-36 duration-500 ease-in-out ${slide === 1 ? 'z-10 translate-x-0 opacity-100' : 'z-0 -translate-x-[118%] opacity-0'}`}
       >
-        <div className="w-2/5 flex flex-col gap-5 items">
-          <h1 className="duration-500" style={{ color: textColour }}>
+        <div className='items flex w-2/5 flex-col gap-5'>
+          <h1 className='duration-500' style={{ color: textColour }}>
             BRINGING <br />
             <b>MELODIES</b> <br />
             TO <b>LIFE</b>
           </h1>
-          <p className="duration-500" style={{ color: textColour }}>
+          <p className='duration-500' style={{ color: textColour }}>
             Where music comes alive. Explore a world of arrangements that
             breathe new life into every note and phrase.
           </p>
           <a
-            href="/arrangements"
-            className="round-button duration-500"
+            href='/arrangements'
+            className='round-button duration-500'
             style={{ backgroundColor: textColour, color: bgColour }}
           >
             EXPLORE ARRANGEMENTS
           </a>
         </div>
         <SVG
-          src="stave.svg"
-          className="duration-500 overflow-visible w-full h-full scale-90"
+          src='stave.svg'
+          className='h-full w-full scale-90 overflow-visible duration-500'
           style={{ fill: textColour }}
-          viewBox="0 -200 1000 1000"
+          viewBox='0 -200 1000 1000'
         />
       </div>
 
       <div
-        id="slide2"
-        className={`absolute w-screen h-screen flex items-center justify-end pr-36 top-0 left-0 duration-500 gap-20
-                ${slide === 1 ? "opacity-0 translate-x-[118%] z-0" : ""}
-                ${slide === 2 ? "opacity-100 z-10" : ""}
-                ${slide === 3 ? "-translate-x-[118%] opacity-0 z-0" : ""}
-                ${slide === 4 ? "-translate-x-[118%] opacity-0 z-0" : ""}`}
+        id='slide2'
+        className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-end gap-20 pr-36 duration-500 ${slide === 1 ? 'z-0 translate-x-[118%] opacity-0' : ''} ${slide === 2 ? 'z-10 opacity-100' : ''} ${slide === 3 ? 'z-0 -translate-x-[118%] opacity-0' : ''} ${slide === 4 ? 'z-0 -translate-x-[118%] opacity-0' : ''}`}
       >
         <SVG
-          src="stave.svg"
-          className="duration-500 overflow-visible w-full h-full scale-90"
+          src='stave.svg'
+          className='h-full w-full scale-90 overflow-visible duration-500'
           style={{ fill: textColour }}
-          viewBox="1500 -200 1000 1000"
+          viewBox='1500 -200 1000 1000'
         />
-        <div className="w-3/5 flex flex-col gap-5 items-end">
+        <div className='flex w-3/5 flex-col items-end gap-5'>
           <p
-            className="text-6xl text-right duration-500"
+            className='text-right text-6xl duration-500'
             style={{ color: textColour }}
           >
             GIVING <b>VOICE</b> <br />
             TO YOUR <br />
             <b>MUSICAL VISION</b>
           </p>
-          <p className="duration-500 text-right" style={{ color: textColour }}>
-            Giving voice to your musical vision starts with focused practice.{" "}
+          <p className='text-right duration-500' style={{ color: textColour }}>
+            Giving voice to your musical vision starts with focused practice.{' '}
             <br />
             Get your custom learning tracks now.
           </p>
           <a
-            href="/learning-tracks"
-            className="round-button duration-500"
+            href='/learning-tracks'
+            className='round-button duration-500'
             style={{ backgroundColor: textColour, color: bgColour }}
           >
             VIEW LEARNING TRACKS
@@ -132,61 +127,59 @@ export default function Homeslide() {
       </div>
 
       <div
-        id="slide3"
-        className={`absolute w-screen h-screen flex items-center justify-between pl-36 top-0 left-0 ease-in-out duration-500 gap-20
-                ${slide === 3 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+        id='slide3'
+        className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-20 pl-36 duration-500 ease-in-out ${slide === 3 ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}
       >
-        <div className="w-3/5 flex flex-col gap-5">
-          <p className="text-6xl duration-500" style={{ color: textColour }}>
+        <div className='flex w-3/5 flex-col gap-5'>
+          <p className='text-6xl duration-500' style={{ color: textColour }}>
             <b>DEVELOP</b> YOUR <br />
             VOCAL <b>POTENTIAL</b>
           </p>
-          <p className="duration-500" style={{ color: textColour }}>
+          <p className='duration-500' style={{ color: textColour }}>
             Develop your voice, build confidence, and achieve your singing goals
             and dreams.
           </p>
           <a
-            href="#voice-lessons"
-            className="round-button duration-500"
+            href='#voice-lessons'
+            className='round-button duration-500'
             style={{ backgroundColor: textColour, color: bgColour }}
           >
             LEARN MORE
           </a>
         </div>
         <SVG
-          src="mic.svg"
-          className="duration-500 h-full w-full overflow-y-hidden"
+          src='mic.svg'
+          className='h-full w-full overflow-y-hidden duration-500'
           style={{ fill: textColour }}
-          viewBox="0 -50 200 300"
+          viewBox='0 -50 200 300'
         />
       </div>
 
       <div
-        id="slide4"
-        className={`absolute w-screen h-screen flex items-center justify-between pr-36 top-0 left-0 duration-500 gap-20
-                ${slide === 4 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+        id='slide4'
+        className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-20 pr-36 duration-500 ${slide === 4 ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}
       >
         <SVG
-          src="people.svg"
-          className="duration-500 -translate-x-[10%]"
+          src='people.svg'
+          className='-translate-x-[10%] duration-500'
           style={{ fill: textColour }}
         />
-        <div className="w-2/5 flex flex-col gap-5 items-end">
+        <div className='flex w-2/5 flex-col items-end gap-5'>
           <p
-            className="text-6xl text-right duration-500"
+            className='text-right text-6xl duration-500'
             style={{ color: textColour }}
           >
             <b>CREATING</b> A <br />
             <b>UNIFIED</b> SOUND
           </p>
-          <p className="duration-500 text-right" style={{ color: textColour }}>
+          <p className='text-right duration-500' style={{ color: textColour }}>
             Creating a unified sound is an artistic journey. Help your ensemble
             explore its musicality and artistry, achieving a cohesive and
             expressive performance.
           </p>
           <a
-            href="#ensemble"
-            className="round-button duration-500"
+            href='#ensemble'
+            className='round-button duration-500'
             style={{ backgroundColor: textColour, color: bgColour }}
           >
             LEARN MORE
@@ -195,44 +188,43 @@ export default function Homeslide() {
       </div>
 
       <div
-        className={`absolute w-screen bottom-0 h-28 z-20 duration-500
-            ${slide === 3 ? "opacity-100" : "opacity-0"} bg-gradient-to-b from-transparent to-dark`}
+        className={`absolute bottom-0 z-20 h-28 w-screen duration-500 ${slide === 3 ? 'opacity-100' : 'opacity-0'} bg-gradient-to-b from-transparent to-dark`}
       ></div>
 
-      <div className="absolute bottom-20 left-36 h-3 flex gap-2 z-30">
+      <div className='absolute bottom-20 left-36 z-30 flex h-3 gap-2'>
         <button
-          className={`${slide === 1 ? "active" : ""} slide-button`}
+          className={`${slide === 1 ? 'active' : ''} slide-button`}
           onClick={() => handleClick(1)}
         >
           <div
-            className={`${slide === 1 ? "active" : "inactive"} progress-bar`}
+            className={`${slide === 1 ? 'active' : 'inactive'} progress-bar`}
             style={{ background: textColour }}
           ></div>
         </button>
         <button
-          className={`${slide === 2 ? "active" : ""} slide-button`}
+          className={`${slide === 2 ? 'active' : ''} slide-button`}
           onClick={() => handleClick(2)}
         >
           <div
-            className={`${slide === 2 ? "active" : "inactive"} progress-bar`}
+            className={`${slide === 2 ? 'active' : 'inactive'} progress-bar`}
             style={{ background: textColour }}
           ></div>
         </button>
         <button
-          className={`${slide === 3 ? "active" : ""} slide-button`}
+          className={`${slide === 3 ? 'active' : ''} slide-button`}
           onClick={() => handleClick(3)}
         >
           <div
-            className={`${slide === 3 ? "active" : "inactive"} progress-bar`}
+            className={`${slide === 3 ? 'active' : 'inactive'} progress-bar`}
             style={{ background: textColour }}
           ></div>
         </button>
         <button
-          className={`${slide === 4 ? "active" : ""} slide-button`}
+          className={`${slide === 4 ? 'active' : ''} slide-button`}
           onClick={() => handleClick(4)}
         >
           <div
-            className={`${slide === 4 ? "active" : "inactive"} progress-bar`}
+            className={`${slide === 4 ? 'active' : 'inactive'} progress-bar`}
             style={{ background: textColour }}
           ></div>
         </button>
