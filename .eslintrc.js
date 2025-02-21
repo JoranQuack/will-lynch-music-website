@@ -25,7 +25,7 @@ module.exports = {
         // 'plugin:@typescript-eslint/stylistic-type-checked',
       ],
       rules: {
-        'tailwindcss/classnames-order': 'off',
+        'tailwindcss/classnames-order': 'on',
       },
     },
   ],
