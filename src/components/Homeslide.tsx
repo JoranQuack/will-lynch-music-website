@@ -57,7 +57,7 @@ export default function Homeslide() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
       <div
-        className={`absolute top-0 left-0 w-screen h-screen -z-10 transition-colors duration-500`}
+        className={`absolute top-0 left-0 w-screen h-[110vh] -z-10 transition-colors duration-500`}
         style={{ backgroundColor: bgColour }}
       ></div>
       <Header textColour={textColour} />

@@ -1,4 +1,5 @@
 import Homeslide from "@/components/Homeslide";
+import SectionTransition from "@/components/SectionTransitions";
 
 export default function Home() {
     return (
@@ -6,6 +7,7 @@ export default function Home() {
             <section id="home" className="w-screen h-screen">
                 <Homeslide/>
             </section>
+            <SectionTransition bgClassName="" curveClassName="text-green fill-current"/>
             
             <p className="text-pinky">will</p>
             <p className="text-bluey">lynch</p>
