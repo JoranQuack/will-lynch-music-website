@@ -12,7 +12,8 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title: "Will Lynch Music",
-  description: "Your friendly neighbourhood freelance musician!",
+  description:
+    "Freelance musician from Christchurch, New Zealand. Specialising in arranging, recording, vocal coaching, ensemble coaching, and performing!",
 };
 
 export default function RootLayout({

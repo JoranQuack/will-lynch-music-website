@@ -95,7 +95,7 @@ export default function Homeslide() {
 
       <div
         id="slide2"
-        className={`absolute w-screen h-screen flex items-center justify-end pr-36 top-0 left-0 duration-500
+        className={`absolute w-screen h-screen flex items-center justify-end pr-36 top-0 left-0 duration-500 gap-20
                 ${slide === 1 ? "opacity-0 translate-x-[118%] z-0" : ""}
                 ${slide === 2 ? "opacity-100 z-10" : ""}
                 ${slide === 3 ? "-translate-x-[118%] opacity-0 z-0" : ""}
@@ -185,7 +185,7 @@ export default function Homeslide() {
             expressive performance.
           </p>
           <a
-            href="/arrangements"
+            href="#ensemble"
             className="round-button duration-500"
             style={{ backgroundColor: textColour, color: bgColour }}
           >

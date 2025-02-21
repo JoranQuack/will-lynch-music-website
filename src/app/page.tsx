@@ -35,13 +35,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      <p className="text-pinky">will</p>
-      <p className="text-bluey">lynch</p>
-      <p className="text-greeny">music</p>
-      <p className="text-green">is</p>
-      <p className="text-dark">coming</p>
-      <p className="text-white">soon</p>
     </main>
   );
 }
