@@ -23,12 +23,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={quicksand.className}
+      className={`${quicksand.className} scroll-smooth`}
       style={{ colorScheme: "light" }}
     >
-      <body
-        className={`${quicksand.variable} antialiased scroll-smooth overflow-x-hidden`}
-      >
+      <body className={`${quicksand.variable} antialiased overflow-x-hidden`}>
         {children}
         <Analytics />
         <SpeedInsights />
