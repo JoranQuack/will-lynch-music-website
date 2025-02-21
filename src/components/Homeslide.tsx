@@ -21,7 +21,7 @@ export default function Homeslide() {
 
     intervalRef.current = setInterval(() => {
       setSlide((prevSlide) => (prevSlide % 4) + 1);
-    }, 7000);
+    }, 700000);
 
     return () => {
       if (intervalRef.current) {
@@ -65,12 +65,9 @@ export default function Homeslide() {
       <div
         id="slide1"
         className={`absolute w-screen h-screen flex items-center justify-between pl-36 top-0 left-0 ease-in-out duration-500 gap-80
-                ${slide === 1 ? "opacity-100 translate-x-0 z-10" : ""}
-                ${slide === 2 ? "opacity-100 -translate-x-[2300px] z-0" : ""}
-                ${slide === 3 ? "opacity-0 -translate-x-[4000px] z-0" : ""}
-                ${slide === 4 ? "opacity-0 -translate-x-[4000px] z-0" : ""}`}
+                ${slide === 1 ? "opacity-100 translate-x-0 z-10" : "opacity-0 -translate-x-[118%] z-0"}`}
       >
-        <div className="w-2/5 flex flex-col gap-5">
+        <div className="w-2/5 flex flex-col gap-5 items">
           <p className="text-6xl duration-500" style={{ color: textColour }}>
             BRINGING <br />
             <b>MELODIES</b> <br />
@@ -90,16 +87,26 @@ export default function Homeslide() {
         </div>
         <SVG
           src="stave.svg"
-          className="duration-500 overflow-visible w-full h-full scale-90 translate-y-[10vh]"
+          className="duration-500 overflow-visible w-full h-full scale-90"
           style={{ fill: textColour }}
+          viewBox="0 -200 1000 1000"
         />
       </div>
 
       <div
         id="slide2"
         className={`absolute w-screen h-screen flex items-center justify-end pr-36 top-0 left-0 duration-500
-                ${slide === 2 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                ${slide === 1 ? "opacity-0 translate-x-[118%] z-0" : ""}
+                ${slide === 2 ? "opacity-100 z-10" : ""}
+                ${slide === 3 ? "-translate-x-[118%] opacity-0 z-0" : ""}
+                ${slide === 4 ? "-translate-x-[118%] opacity-0 z-0" : ""}`}
       >
+        <SVG
+          src="stave.svg"
+          className="duration-500 overflow-visible w-full h-full scale-90"
+          style={{ fill: textColour }}
+          viewBox="1500 -200 1000 1000"
+        />
         <div className="w-3/5 flex flex-col gap-5 items-end">
           <p
             className="text-6xl text-right duration-500"
@@ -148,8 +155,9 @@ export default function Homeslide() {
         </div>
         <SVG
           src="mic.svg"
-          className="duration-500 h-full w-full translate-y-1/2 scale-150"
+          className="duration-500 h-full w-full overflow-y-hidden"
           style={{ fill: textColour }}
+          viewBox="0 -50 200 300"
         />
       </div>
 
