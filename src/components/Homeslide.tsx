@@ -57,7 +57,7 @@ export default function Homeslide() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
       <div
-        className={`absolute top-0 left-0 w-screen h-[110vh] -z-10 transition-colors duration-500`}
+        className={`absolute top-0 left-0 w-screen h-screen -z-10 transition-colors duration-500`}
         style={{ backgroundColor: bgColour }}
       ></div>
       <Header textColour={textColour} />
@@ -68,11 +68,11 @@ export default function Homeslide() {
                 ${slide === 1 ? "opacity-100 translate-x-0 z-10" : "opacity-0 -translate-x-[118%] z-0"}`}
       >
         <div className="w-2/5 flex flex-col gap-5 items">
-          <p className="text-6xl duration-500" style={{ color: textColour }}>
+          <h1 className="duration-500" style={{ color: textColour }}>
             BRINGING <br />
             <b>MELODIES</b> <br />
             TO <b>LIFE</b>
-          </p>
+          </h1>
           <p className="duration-500" style={{ color: textColour }}>
             Where music comes alive. Explore a world of arrangements that
             breathe new life into every note and phrase.

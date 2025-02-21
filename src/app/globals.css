@@ -18,30 +18,34 @@ body {
   font-family: quicksand, sans-serif;
 }
 
-nav a { 
-    @apply hover:opacity-50 duration-500 flex gap-1 items-center;
+nav a {
+  @apply hover:opacity-50 duration-500 flex gap-1 items-center;
+}
+
+h1 {
+  @apply text-6xl;
 }
 
 .slide-button {
-    @apply bg-white h-full w-14 rounded-full hover:opacity-50 duration-500;
+  @apply bg-white h-full w-14 rounded-full hover:opacity-50 duration-500;
 }
 
 .active {
-    @apply bg-opacity-50 overflow-hidden;
+  @apply bg-opacity-50 overflow-hidden;
 }
 
 .progress-bar {
-    @apply h-full w-full rounded-full duration-500 opacity-100 transition-opacity;
+  @apply h-full w-full rounded-full duration-500 opacity-100 transition-opacity;
 }
 
 .inactive {
-    @apply opacity-0;
+  @apply opacity-0;
 }
 
 .active .progress-bar {
-    @apply animate-slide-button;
+  @apply animate-slide-button;
 }
 
 .round-button {
-    @apply bg-green px-5 py-4 rounded-full hover:opacity-50 duration-500 text-white font-semibold w-fit text-sm;
+  @apply bg-green px-5 py-4 rounded-full hover:opacity-50 duration-500 text-white font-semibold w-fit text-sm;
 }
