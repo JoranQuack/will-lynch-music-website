@@ -69,27 +69,22 @@ export default function Homeslide() {
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-80 pl-36 duration-500 ease-in-out ${slide === 1 ? "z-10 translate-x-0 opacity-100" : "z-0 -translate-x-[118%] opacity-0"}`}
       >
         <div className="items flex w-2/5 flex-col gap-5">
-          <h1 className="duration-500" style={{ color: textColour }}>
+          <h1 className="text-green">
             BRINGING <br />
             <b>MELODIES</b> <br />
             TO <b>LIFE</b>
           </h1>
-          <p className="duration-500" style={{ color: textColour }}>
+          <p className="text-green">
             Where music comes alive. Explore a world of arrangements that
             breathe new life into every note and phrase.
           </p>
-          <a
-            href="/arrangements"
-            className="round-button duration-500"
-            style={{ backgroundColor: textColour, color: bgColour }}
-          >
+          <a href="/arrangements" className="round-button bg-green text-white">
             EXPLORE ARRANGEMENTS
           </a>
         </div>
         <SVG
           src="stave.svg"
-          className="h-full w-full scale-90 overflow-visible duration-500"
-          style={{ fill: textColour }}
+          className="h-full w-full scale-90 overflow-visible fill-green"
           viewBox="0 -200 1000 1000"
         />
       </div>
@@ -100,28 +95,23 @@ export default function Homeslide() {
       >
         <SVG
           src="stave.svg"
-          className="h-full w-full scale-90 overflow-visible duration-500"
-          style={{ fill: textColour }}
+          className="h-full w-full scale-90 overflow-visible fill-dark"
           viewBox="1500 -200 1000 1000"
         />
         <div className="flex w-3/5 flex-col items-end gap-5">
-          <p
-            className="text-right text-6xl duration-500"
-            style={{ color: textColour }}
-          >
+          <p className="text-right text-6xl text-dark">
             GIVING <b>VOICE</b> <br />
             TO YOUR <br />
             <b>MUSICAL VISION</b>
           </p>
-          <p className="text-right duration-500" style={{ color: textColour }}>
+          <p className="text-right text-dark">
             Giving voice to your musical vision starts with focused practice.{" "}
             <br />
             Get your custom learning tracks now.
           </p>
           <a
             href="/learning-tracks"
-            className="round-button duration-500"
-            style={{ backgroundColor: textColour, color: bgColour }}
+            className="round-button bg-dark text-white"
           >
             VIEW LEARNING TRACKS
           </a>
@@ -133,26 +123,21 @@ export default function Homeslide() {
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-20 pl-36 duration-500 ease-in-out ${slide === 3 ? "z-10 opacity-100" : "z-0 opacity-0"}`}
       >
         <div className="flex w-3/5 flex-col gap-5">
-          <p className="text-6xl duration-500" style={{ color: textColour }}>
+          <p className="text-6xl text-greeny">
             <b>DEVELOP</b> YOUR <br />
             VOCAL <b>POTENTIAL</b>
           </p>
-          <p className="duration-500" style={{ color: textColour }}>
+          <p className="text-greeny">
             Develop your voice, build confidence, and achieve your singing goals
             and dreams.
           </p>
-          <a
-            href="#voice-lessons"
-            className="round-button duration-500"
-            style={{ backgroundColor: textColour, color: bgColour }}
-          >
+          <a href="#voice-lessons" className="round-button bg-greeny text-dark">
             LEARN MORE
           </a>
         </div>
         <SVG
           src="mic.svg"
-          className="h-full w-full overflow-y-hidden duration-500"
-          style={{ fill: textColour }}
+          className="h-full w-full overflow-y-hidden fill-greeny"
           viewBox="0 -50 200 300"
         />
       </div>
@@ -161,29 +146,18 @@ export default function Homeslide() {
         id="slide4"
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-20 pr-36 duration-500 ${slide === 4 ? "z-10 opacity-100" : "z-0 opacity-0"}`}
       >
-        <SVG
-          src="people.svg"
-          className="-translate-x-[10%] duration-500"
-          style={{ fill: textColour }}
-        />
+        <SVG src="people.svg" className="-translate-x-[10%] fill-dark" />
         <div className="flex w-2/5 flex-col items-end gap-5">
-          <p
-            className="text-right text-6xl duration-500"
-            style={{ color: textColour }}
-          >
+          <p className="text-right text-6xl text-dark">
             <b>CREATING</b> A <br />
             <b>UNIFIED</b> SOUND
           </p>
-          <p className="text-right duration-500" style={{ color: textColour }}>
+          <p className="text-right text-dark">
             Creating a unified sound is an artistic journey. Help your ensemble
             explore its musicality and artistry, achieving a cohesive and
             expressive performance.
           </p>
-          <a
-            href="#ensemble"
-            className="round-button duration-500"
-            style={{ backgroundColor: textColour, color: bgColour }}
-          >
+          <a href="#ensemble" className="round-button bg-dark text-white">
             LEARN MORE
           </a>
         </div>
