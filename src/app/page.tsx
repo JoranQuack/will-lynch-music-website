@@ -1,3 +1,4 @@
+import Block from "@/components/Block";
 import Homeslide from "@/components/Homeslide";
 import Image from "next/image";
 
@@ -33,6 +34,37 @@ export default function Home() {
             musical, so If there&apos;s anything you&apos;re interested in
             please don&apos;t hesitate to get in touch!
           </p>
+        </div>
+      </section>
+      <section id="browse" className="px-36">
+        <div className="my-20 flex w-full justify-center">
+          <h1 className="font-semibold text-green">BROWSE</h1>
+        </div>
+        <div className="mb-10 grid grid-cols-5 gap-5">
+          <Block
+            id="arrangements"
+            className="col-span-3 bg-bluey text-dark"
+            title="ARRANGEMENTS"
+            description="Discover my arranging style through these examples."
+          />
+          <Block
+            id="arrangements-custom"
+            className="col-span-2 bg-greeny text-green"
+            title="CUSTOM ARRANGEMENTS"
+            description="Commission your custom arrangement today."
+          />
+          <Block
+            id="tracks-custom"
+            className="col-span-2 bg-greeny text-green"
+            title="YOUR TRACKS"
+            description="Personalized practice tracks designed to meet your specific needs."
+          />
+          <Block
+            id="tracks"
+            className="col-span-3 bg-pinky text-dark"
+            title="LEARNING TRACKS"
+            description="Browse available learning tracks."
+          />
         </div>
       </section>
     </main>

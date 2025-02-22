@@ -69,7 +69,7 @@ export default function Homeslide() {
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-80 pl-36 duration-500 ease-in-out ${slide === 1 ? "z-10 translate-x-0 opacity-100" : "z-0 -translate-x-[118%] opacity-0"}`}
       >
         <div className="items flex w-2/5 flex-col gap-5">
-          <h1 className="text-green">
+          <h1 className="text-6xl text-green">
             BRINGING <br />
             <b>MELODIES</b> <br />
             TO <b>LIFE</b>
