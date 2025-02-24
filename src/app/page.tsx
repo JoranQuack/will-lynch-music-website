@@ -21,7 +21,7 @@ export default function Home() {
         <div className="flex w-1/3 flex-col gap-3">
           <h1 className="font-semibold text-white">ABOUT ME</h1>
           <h2 className="text-xl font-medium text-greeny">
-            Your friendly neighborhood freelance musician!
+            Your friendly neighbourhood freelance musician!
           </h2>
           <p className="text-white">
             Kia ora! I&apos;m Will, and I&apos;m a freelance musician based in

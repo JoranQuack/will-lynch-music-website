@@ -1,13 +1,11 @@
 "use client";
 
 import Header from "./Header";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import SVG from "react-inlinesvg";
 
 export default function Homeslide() {
   const [slide, setSlide] = useState(1);
-  const [bgColour, setBgColour] = useState("greeny");
-  const [textColour, setTextColour] = useState("green");
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   function handleClick(number: number) {
@@ -30,27 +28,17 @@ export default function Homeslide() {
     };
   }, [slide]);
 
-  useEffect(() => {
+  const [bgColour, textColour] = useMemo(() => {
     switch (slide) {
-      case 1:
-        setBgColour("#BDE9C9");
-        setTextColour("#027223");
-        break;
-      case 2:
-        setBgColour("#C4D9F2");
-        setTextColour("#3E464F");
-        break;
-      case 3:
-        setBgColour("#3E464F");
-        setTextColour("#BDE9C9");
-        break;
-      case 4:
-        setBgColour("#E8E3F2");
-        setTextColour("#3E464F");
-        break;
       default:
-        setBgColour("#BDE9C9");
-        setTextColour("#027223");
+      case 1:
+        return ["#BDE9C9", "#027223"];
+      case 2:
+        return ["#C4D9F2", "#3E464F"];
+      case 3:
+        return ["#3E464F", "#BDE9C9"];
+      case 4:
+        return ["#E8E3F2", "#3E464F"];
     }
   }, [slide]);
 
