@@ -23,7 +23,7 @@ nav a {
 }
 
 h1 {
-  @apply text-6xl;
+  @apply text-5xl;
 }
 
 .slide-button {
