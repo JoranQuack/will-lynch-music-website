@@ -20,7 +20,7 @@ export default function Home() {
           className="-mr-60"
         />
         <div className="flex w-1/3 flex-col gap-3">
-          <h1 className="font-semibold text-white">ABOUT ME</h1>
+          <h1 className="font-bold text-white">ABOUT ME</h1>
           <h2 className="text-xl font-medium text-greeny">
             Your friendly neighbourhood freelance musician!
           </h2>
@@ -37,8 +37,8 @@ export default function Home() {
         </div>
       </section>
       <section id="browse" className="px-36">
-        <div className="my-20 flex w-full justify-center">
-          <h1 className="font-semibold text-green">BROWSE</h1>
+        <div className="mb-10 mt-20 flex w-full justify-center">
+          <h1 className="font-bold text-green">BROWSE</h1>
         </div>
         <div className="mb-10 grid grid-cols-5 gap-5">
           <Block

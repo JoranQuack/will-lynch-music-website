@@ -57,17 +57,17 @@ export default function Homeslide() {
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-80 pl-36 duration-500 ease-in-out ${slide === 1 ? "z-10 translate-x-0 opacity-100" : "z-0 -translate-x-[118%] opacity-0"}`}
       >
         <div className="items flex w-2/5 flex-col gap-5">
-          <h1 className="text-6xl text-green">
-            BRINGING <br />
-            <b>MELODIES</b> <br />
-            TO <b>LIFE</b>
+          <h1 className="text-wrap text-6xl text-green">
+            PROFFESSIONAL <br />
+            <b>VOCAL ARRANGEMENTS</b>
           </h1>
           <p className="text-green">
-            Where music comes alive. Explore a world of arrangements that
-            breathe new life into every note and phrase.
+            Charts in all voicings, with a wide variety of genres! If you
+            don&apos;t see a song there that you think would be a banger, hit me
+            up and I can arrange it for you!
           </p>
           <a href="/arrangements" className="round-button bg-green text-white">
-            EXPLORE ARRANGEMENTS
+            EXPLORE
           </a>
         </div>
         <SVG
@@ -87,21 +87,21 @@ export default function Homeslide() {
           viewBox="1500 -200 1000 1000"
         />
         <div className="flex w-3/5 flex-col items-end gap-5">
-          <p className="text-right text-6xl text-dark">
-            GIVING <b>VOICE</b> <br />
-            TO YOUR <br />
-            <b>MUSICAL VISION</b>
-          </p>
+          <h1 className="text-wrap text-right text-6xl text-dark">
+            RECORDED <br />
+            <b>LEARNING TRACKS</b>
+          </h1>
           <p className="text-right text-dark">
-            Giving voice to your musical vision starts with focused practice.{" "}
-            <br />
-            Get your custom learning tracks now.
+            Recorded in a variety of voicings, feel free to browse through my
+            library of existing learning tracks! If you need a new set of
+            learning tracks or revoicing of an existing set, don&apos;t hesitate
+            to get in touch.
           </p>
           <a
             href="/learning-tracks"
             className="round-button bg-dark text-white"
           >
-            VIEW LEARNING TRACKS
+            EXPLORE
           </a>
         </div>
       </div>
@@ -111,13 +111,14 @@ export default function Homeslide() {
         className={`absolute left-0 top-0 flex h-screen w-screen items-center justify-between gap-20 pl-36 duration-500 ease-in-out ${slide === 3 ? "z-10 opacity-100" : "z-0 opacity-0"}`}
       >
         <div className="flex w-3/5 flex-col gap-5">
-          <p className="text-6xl text-greeny">
-            <b>DEVELOP</b> YOUR <br />
-            VOCAL <b>POTENTIAL</b>
-          </p>
+          <h1 className="text-wrap text-6xl text-greeny">
+            PRIVATE <br />
+            <b>VOCAL LESSONS</b>
+          </h1>
           <p className="text-greeny">
-            Develop your voice, build confidence, and achieve your singing goals
-            and dreams.
+            I run a private home vocal studio, and am also able to teach online.
+            If you&apos;re keen to kickstart your vocal journey, I would love to
+            do all I can to help you along the way!
           </p>
           <a href="#voice-lessons" className="round-button bg-greeny text-dark">
             LEARN MORE
@@ -136,14 +137,16 @@ export default function Homeslide() {
       >
         <SVG src="people.svg" className="-translate-x-[10%] fill-dark" />
         <div className="flex w-2/5 flex-col items-end gap-5">
-          <p className="text-right text-6xl text-dark">
-            <b>CREATING</b> A <br />
-            <b>UNIFIED</b> SOUND
-          </p>
+          <h1 className="text-wrap text-right text-6xl text-dark">
+            ENSEMBLE <br />
+            <b>COACHING</b>
+          </h1>
           <p className="text-right text-dark">
-            Creating a unified sound is an artistic journey. Help your ensemble
-            explore its musicality and artistry, achieving a cohesive and
-            expressive performance.
+            I&apos;m an experienced performer, director and coach with 10 years
+            of experience learning all I can about creating meaningful music and
+            impactful performances. I would love to share what I can to help
+            your group reach its full potential, so get in touch to book your
+            slot today!
           </p>
           <a href="#ensemble" className="round-button bg-dark text-white">
             LEARN MORE
