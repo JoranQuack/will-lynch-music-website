@@ -14,6 +14,10 @@
   }
 } */
 
+* {
+  @apply scroll-mt-20;
+}
+
 body {
   font-family: quicksand, sans-serif;
 }

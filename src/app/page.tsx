@@ -7,7 +7,7 @@ import SVG from "react-inlinesvg";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <section id="home" className="h-screen w-screen">
         <Homeslide />
       </section>
@@ -39,8 +39,8 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="browse" className="px-36 pb-5">
-        <div className="mb-10 mt-20 flex w-full justify-center">
+      <section id="browse" className="px-36 py-20">
+        <div className="mb-10 flex w-full justify-center">
           <h1 className="font-bold text-green">BROWSE</h1>
         </div>
         <div className="mb-10 grid grid-cols-5 gap-5">
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
       <section id="expertise">
-        <div className="grid grid-cols-2 bg-bluey">
+        <div id="voice-lessons" className="grid grid-cols-2 bg-bluey">
           <div className="flex flex-col gap-5 px-36 pb-14 pt-20 text-dark">
             <h1 className="font-bold">VOICE LESSONS</h1>
             <p>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           <div className="flex items-center bg-[url(/voice-lessons.png)] bg-cover bg-center" />
         </div>
-        <div className="grid grid-cols-2 bg-pinky">
+        <div id="ensemble" className="grid grid-cols-2 bg-pinky">
           <div className="flex items-center bg-[url(/ensemble-coaching.png)] bg-cover bg-center" />
           <div className="flex flex-col gap-5 pb-14 pl-24 pr-36 pt-20 text-dark">
             <h1 className="font-bold">ENSEMBLE COACHING</h1>
