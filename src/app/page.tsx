@@ -3,6 +3,7 @@ import Homeslide from "@/components/Homeslide";
 import Person from "@/components/Person";
 import Video from "@/components/Video";
 import Image from "next/image";
+import SVG from "react-inlinesvg";
 
 export default function Home() {
   return (
@@ -178,6 +179,14 @@ export default function Home() {
           </form>
         </div>
       </section>
+      <footer className="relative flex items-end justify-between overflow-hidden bg-green px-36 pb-20 pt-72">
+        <SVG src="/logo.svg" className="fill-white" />
+        <p className="text-white">Site by Joran Le Quellec</p>
+        <SVG
+          src="/mic.svg"
+          className="absolute bottom-0 left-3/4 h-full w-full translate-x-[40%] translate-y-[50%] scale-[200%] transform fill-black opacity-10"
+        />
+      </footer>
     </main>
   );
 }
