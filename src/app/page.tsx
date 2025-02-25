@@ -109,7 +109,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="flex justify-between gap-32 bg-greeny px-36 py-20">
+        <div className="flex items-center justify-between gap-32 bg-greeny px-36 py-20">
           <div className="flex w-1/4 flex-col gap-5 text-green">
             <h1 className="">
               YEP, I&apos;M A <br /> <b>PERFORMER</b>
@@ -142,6 +142,40 @@ export default function Home() {
               <Video src="/voice-lessons.png" name="Me being cool" />
             </div>
           </div>
+        </div>
+      </section>
+      <section id="contact" className="bg-white px-36 py-20 text-dark">
+        <div className="grid grid-cols-2 gap-36">
+          <div className="flex flex-col justify-between">
+            <div className="flex flex-col gap-3">
+              <h1 className="font-bold text-green">GET IN TOUCH</h1>
+              <p>
+                Want to purchase, enquire, or simply say hi? Don&apos;t
+                hesitate, get in contact. I&apos;d love to hear from you via
+                phone or email!
+              </p>
+            </div>
+            <p>
+              <b>EMAIL ME:</b> <br />
+              will@willlynchmusic.co.nz
+            </p>
+            <p>
+              <b>PHONE ME:</b> <br />
+              021 2345 6789
+            </p>
+          </div>
+          <form className="flex flex-col gap-8">
+            <div className="grid grid-cols-2 gap-2">
+              <input type="text" className="w-full" placeholder="First Name" />
+              <input type="text" className="w-full" placeholder="Last Name" />
+            </div>
+            <input type="text" className="w-full" placeholder="Email" />
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message">Message</label>
+              <textarea name="message" id="message"></textarea>
+            </div>
+            <a className="round-button bg-green text-white">SEND</a>
+          </form>
         </div>
       </section>
     </main>

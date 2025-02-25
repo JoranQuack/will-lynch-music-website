@@ -30,6 +30,14 @@ h2 {
   @apply font-semibold text-green;
 }
 
+input {
+  @apply border-b border-dark py-2 text-dark;
+}
+
+textarea {
+  @apply w-full rounded-md border border-dark p-2;
+}
+
 .slide-button {
   @apply h-full w-14 rounded-full bg-white duration-500 hover:opacity-50;
 }
