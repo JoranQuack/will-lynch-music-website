@@ -16,7 +16,7 @@ export default function Block({
   return (
     <a
       className={`${className} group relative h-96 overflow-hidden rounded-xl`}
-      href={`/${id}`}
+      href={`/${id.split("-").join("#")}`}
     >
       <div className="absolute z-20 flex h-96 w-full flex-col items-start justify-end px-8 py-6">
         <h1 className="text-4xl font-bold">{title}</h1>
