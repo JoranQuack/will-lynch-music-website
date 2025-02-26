@@ -23,7 +23,7 @@ body {
 }
 
 nav a {
-  @apply flex items-center gap-1 duration-500 hover:opacity-50;
+  @apply flex items-center gap-1 transition-opacity duration-500 hover:opacity-50;
 }
 
 h1 {

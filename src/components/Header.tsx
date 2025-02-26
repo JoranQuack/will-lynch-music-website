@@ -24,7 +24,7 @@ export default function Header({ textColour }: HeaderProps) {
   return (
     <header
       className={
-        "fixed left-0 top-0 z-40 flex h-20 w-screen items-center justify-between border-b px-36 duration-500"
+        "fixed left-0 top-0 z-40 flex h-20 w-screen items-center justify-between border-b px-36 transition-colors duration-500"
       }
       style={{ color: colour, borderColor: colour, backgroundColor: bgColour }}
     >
