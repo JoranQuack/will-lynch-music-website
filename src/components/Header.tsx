@@ -23,9 +23,7 @@ export default function Header({ textColour }: HeaderProps) {
 
   return (
     <header
-      className={
-        "fixed left-0 top-0 z-40 flex h-20 w-screen items-center justify-between border-b px-36 transition-colors duration-500"
-      }
+      className="fixed left-0 top-0 z-40 flex h-20 w-screen items-center justify-between border-b px-36 transition-all duration-500"
       style={{ color: colour, borderColor: colour, backgroundColor: bgColour }}
     >
       <SVG
@@ -36,22 +34,8 @@ export default function Header({ textColour }: HeaderProps) {
       <nav className="flex gap-10 font-medium">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
-        <a href="#browse">
-          BROWSE{" "}
-          <SVG
-            src="down-arrow.svg"
-            style={{ stroke: colour }}
-            className="-mr-2 duration-500"
-          />{" "}
-        </a>
-        <a href="#expertise">
-          EXPERTISE{" "}
-          <SVG
-            src="down-arrow.svg"
-            style={{ stroke: colour }}
-            className="-mr-2 duration-500"
-          />{" "}
-        </a>
+        <a href="#browse">BROWSE</a>
+        <a href="#expertise">EXPERTISE</a>
         <a href="#contact">CONTACT</a>
       </nav>
     </header>
