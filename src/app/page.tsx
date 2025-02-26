@@ -1,4 +1,5 @@
 import Block from "@/components/Block";
+import Contact from "@/components/Contact";
 import Homeslide from "@/components/Homeslide";
 import Person from "@/components/Person";
 import Video from "@/components/Video";
@@ -165,18 +166,7 @@ export default function Home() {
               021 2345 6789
             </p>
           </div>
-          <form className="flex flex-col gap-8">
-            <div className="grid grid-cols-2 gap-2">
-              <input type="text" className="w-full" placeholder="First Name" />
-              <input type="text" className="w-full" placeholder="Last Name" />
-            </div>
-            <input type="text" className="w-full" placeholder="Email" />
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message"></textarea>
-            </div>
-            <a className="round-button bg-green text-white">SEND</a>
-          </form>
+          <Contact />
         </div>
       </section>
       <footer className="relative flex items-end justify-between overflow-hidden bg-green px-36 pb-20 pt-72">

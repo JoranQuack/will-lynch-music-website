@@ -11,11 +11,14 @@
     "build:local": "prettier --write . && next build"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "next": "^15.1.7",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "react-inlinesvg": "^4.1.8",
     "swiper": "^11.2.4",
     "tsx": "^4.19.3"

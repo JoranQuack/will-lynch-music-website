@@ -34,12 +34,27 @@ h2 {
   @apply font-semibold text-green;
 }
 
+input,
+textarea {
+  @apply border-dark bg-transparent p-2 text-dark outline-none duration-500 focus:border-green;
+}
+
 input {
-  @apply border-b border-dark py-2 text-dark;
+  @apply border-b px-0;
 }
 
 textarea {
-  @apply w-full rounded-md border border-dark p-2;
+  @apply w-full rounded-md border;
+}
+
+.form-field:focus-within label,
+.form-field:has(input:not(:placeholder-shown)) label,
+.form-field:has(textarea:not(:placeholder-shown)) label {
+  @apply origin-left -translate-y-4 scale-90 opacity-100;
+}
+
+.form-field label {
+  @apply pointer-events-none absolute translate-y-2 text-dark opacity-60 duration-500;
 }
 
 .slide-button {
