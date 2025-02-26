@@ -24,10 +24,10 @@ export default function Block({
       </div>
       <Image
         src={`/${id}.png`}
-        width={1000}
-        height={1000}
+        width={3000}
+        height={2000}
         alt={id}
-        className="min-h-full min-w-full rounded-xl duration-500 group-hover:scale-125 group-hover:opacity-0"
+        className="min-h-full min-w-full rounded-xl object-cover duration-500 group-hover:scale-125 group-hover:opacity-0 group-hover:blur-lg"
       />
     </a>
   );
