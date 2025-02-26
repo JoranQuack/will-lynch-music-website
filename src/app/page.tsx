@@ -46,25 +46,29 @@ export default function Home() {
         <div className="mb-10 grid grid-cols-5 gap-5">
           <Block
             id="arrangements"
-            className="col-span-3 bg-bluey text-dark"
+            className="col-span-3 text-dark"
+            bgColor="bluey"
             title="ARRANGEMENTS"
             description="Discover my arranging style through these examples."
           />
           <Block
             id="arrangements-custom"
-            className="col-span-2 bg-greeny text-green"
+            className="col-span-2 text-green"
+            bgColor="greeny"
             title="CUSTOM ARRANGEMENTS"
             description="Commission your custom arrangement today."
           />
           <Block
             id="tracks-custom"
-            className="col-span-2 bg-greeny text-green"
+            className="col-span-2 text-green"
+            bgColor="greeny"
             title="YOUR TRACKS"
             description="Personalized practice tracks designed to meet your specific needs."
           />
           <Block
             id="tracks"
-            className="col-span-3 bg-pinky text-dark"
+            className="col-span-3 text-dark"
+            bgColor="pinky"
             title="LEARNING TRACKS"
             description="Browse available learning tracks."
           />

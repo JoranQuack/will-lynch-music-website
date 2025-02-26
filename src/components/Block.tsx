@@ -1,10 +1,9 @@
-import Image from "next/image";
-
 interface BlockProps {
   id: string;
   className: string;
   title: string;
   description: string;
+  bgColor: string;
 }
 
 export default function Block({
@@ -12,22 +11,20 @@ export default function Block({
   className,
   title,
   description,
+  bgColor,
 }: BlockProps) {
   return (
     <a
-      className={`${className} group relative h-96 overflow-hidden rounded-xl`}
+      className={`${className} group relative h-96 overflow-hidden rounded-xl bg-[length:115%] bg-[center_60%] duration-500 hover:bg-[length:145%]`}
       href={`/${id}`}
+      style={{ backgroundImage: `url(/${id}.png)` }}
     >
-      <div className="absolute z-10 flex h-96 w-full flex-col items-start justify-end px-8 py-6">
+      <div className="absolute z-20 flex h-96 w-full flex-col items-start justify-end px-8 py-6">
         <h1 className="text-4xl font-bold">{title}</h1>
         <p>{description}</p>
       </div>
-      <Image
-        src={`/${id}.png`}
-        width={1000}
-        height={1000}
-        alt={id}
-        className="min-h-full min-w-full rounded-xl mix-blend-overlay blur-sm duration-500 group-hover:scale-125 group-hover:blur-none"
+      <div
+        className={`absolute z-10 h-full w-full rounded-xl bg-${bgColor} mix-blend-hard-light`}
       />
     </a>
   );
