@@ -2,7 +2,7 @@ import Block from "@/components/Block";
 import Contact from "@/components/Contact";
 import Homeslide from "@/components/Homeslide";
 import Person from "@/components/Person";
-import Video from "@/components/Video";
+// import Video from "@/components/Video";
 import Image from "next/image";
 import SVG from "react-inlinesvg";
 
@@ -111,31 +111,40 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="flex items-center justify-between gap-32 bg-greeny px-36 py-20">
-          <div className="flex w-1/4 flex-col gap-5 text-green">
-            <h1 className="">
-              YEP, I&apos;M A <br /> <b>PERFORMER</b>
-            </h1>
-            <p>
-              I&apos;m a versatile vocal performer with a diverse background in
-              musical theatre, opera, cabaret, burlesque, and barbershop stage
-              experience. I love getting involved in great projects, and am so
-              lucky to have collaborated with some fantastic people!
-            </p>
-            <a className="round-button bg-green text-white" href="#contact">
-              GET IN TOUCH
-            </a>
+        <div className="flex h-[40rem] justify-between gap-32 bg-greeny pl-36">
+          <div className="flex h-full items-center">
+            <div className="flex w-64 flex-col gap-5 py-20 text-green">
+              <h1>
+                YEP, I&apos;M A <br /> <b>PERFORMER</b>
+              </h1>
+              <p>
+                I&apos;m a versatile vocal performer with a diverse background
+                in musical theatre, opera, cabaret, burlesque, and barbershop
+                stage experience. I love getting involved in great projects, and
+                am so lucky to have collaborated with some fantastic people!
+              </p>
+              <a className="round-button bg-green text-white" href="#contact">
+                GET IN TOUCH
+              </a>
+            </div>
           </div>
-          <div>
-            <h2>PEOPLE I&apos;VE WORKED WITH</h2>
-            <div className="mt-5 grid grid-cols-2 gap-8">
-              <Person src="/cso.jpg" name="Christchurch Symphony Orchestra" />
+          <div className="flex h-full items-center py-20">
+            <div className="grid h-96 w-80 grid-cols-2 gap-5">
+              <h2 className="col-span-2">PEOPLE I&apos;VE WORKED WITH</h2>
+              <Person src="/tto.jpg" name="Toi Toi Opera" />
               <Person src="/tec.jpg" name="The Entertainment Company" />
               <Person src="/ck.jpg" name="Cirko Kali" />
               <Person src="/wbf.jpg" name="World Buskers Festival" />
             </div>
           </div>
-          <div>
+          <Image
+            src="/performer.png"
+            width={1000}
+            height={1000}
+            alt="performer"
+            className="h- object-cover"
+          />
+          {/* <div>
             <h2>PERFORMANCE CLIPS</h2>
             <div className="mt-5 grid grid-cols-2 gap-8">
               <Video src="/voice-lessons.png" name="Me being cool" />
@@ -143,7 +152,7 @@ export default function Home() {
               <Video src="/voice-lessons.png" name="Me being cool" />
               <Video src="/voice-lessons.png" name="Me being cool" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section id="contact" className="bg-white px-36 py-20 text-dark">
