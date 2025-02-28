@@ -155,28 +155,28 @@ export default function Home() {
           </div> */}
         </div>
       </section>
-      <section id="contact" className="bg-white px-36 py-20 text-dark">
-        <div className="grid grid-cols-2 gap-36">
-          <div className="flex flex-col justify-between">
-            <div className="flex flex-col gap-3">
-              <h1 className="font-bold text-green">GET IN TOUCH</h1>
-              <p>
-                Want to purchase, enquire, or simply say hi? Don&apos;t
-                hesitate, get in contact. I&apos;d love to hear from you via
-                phone or email!
-              </p>
-            </div>
+      <section
+        id="contact"
+        className="grid grid-cols-2 gap-36 bg-white px-36 py-20 text-dark"
+      >
+        <div className="flex flex-col justify-start gap-10">
+          <div className="flex flex-col gap-3">
+            <h1 className="font-bold text-green">GET IN TOUCH</h1>
             <p>
-              <b>EMAIL ME:</b> <br />
-              will@willlynchmusic.co.nz
-            </p>
-            <p>
-              <b>PHONE ME:</b> <br />
-              021 2345 6789
+              Want to purchase, enquire, or simply say hi? Don&apos;t hesitate,
+              get in contact. I&apos;d love to hear from you via phone or email!
             </p>
           </div>
-          <Contact />
+          <p>
+            <b>EMAIL ME:</b> <br />
+            will@willlynchmusic.co.nz
+          </p>
+          <p>
+            <b>PHONE ME:</b> <br />
+            021 2345 6789
+          </p>
         </div>
+        <Contact />
       </section>
       <footer className="relative flex items-end justify-between overflow-hidden bg-green px-36 pb-20 pt-72">
         <SVG src="/logo.svg" className="fill-white" />

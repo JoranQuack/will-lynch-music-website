@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
     from: email,
     to: process.env.MY_EMAIL,
     // cc: email,
-    subject: `Message from ${firstName} ${lastName} (${email})`,
-    text: message,
+    subject: `Message from ${firstName} ${lastName}`,
+    text: `${message} \n\n Reply: ${email}`,
   };
 
   const sendMailPromise = () =>
