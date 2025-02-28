@@ -3,19 +3,33 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
-  const { email, firstName, lastName, message } = await request.json();
+  const { email, firstName, lastName, message, recaptchaToken } = await request.json();
 
+  // Verify reCAPTCHA token
+  const recaptchaResponse = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    }
+  );
+
+  const recaptchaResult = await recaptchaResponse.json();
+
+  // Check reCAPTCHA verification
+  if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
+    return NextResponse.json(
+      { error: "reCAPTCHA verification failed" },
+      { status: 400 }
+    );
+  }
+
+  // Proceed with email sending if verification passed
   const transport = nodemailer.createTransport({
     service: "gmail",
-    /* 
-      setting service as 'gmail' is same as providing these setings:
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true
-      If you want to use a different email provider other than gmail, you need to provide these manually.
-      Or you can go use these well known services and their settings at
-      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-  */
     auth: {
       user: process.env.MY_EMAIL,
       pass: process.env.MY_PASSWORD,
@@ -25,7 +39,6 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: email,
     to: process.env.MY_EMAIL,
-    // cc: email,
     subject: `Message from ${firstName} ${lastName}`,
     text: `${message} \n\n Reply: ${email}`,
   };

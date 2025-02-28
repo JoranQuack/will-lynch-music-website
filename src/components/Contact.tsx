@@ -3,20 +3,25 @@
 import { FC, useState } from "react";
 import { sendEmail } from "@/utils/send-email";
 import Loader from "@/components/Loader";
-import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 
 export type FormData = {
   firstName: string;
   lastName: string;
   email: string;
   message: string;
+  recaptchaToken?: string;
 };
 
-const Contact: FC = () => {
+const ContactForm: FC = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const formik = useFormik({
     initialValues: {
@@ -41,15 +46,27 @@ const Contact: FC = () => {
         .required("Required"),
     }),
     onSubmit: async (values) => {
+      if (!executeRecaptcha) {
+        alert("reCAPTCHA not available");
+        return;
+      }
       setIsSending(true);
       try {
-        await sendEmail(values);
+        // Execute reCAPTCHA and get token
+        const token = await executeRecaptcha("contact_form");
+
+        // Send email with token
+        await sendEmail({
+          ...values,
+          recaptchaToken: token,
+        });
+
         formik.resetForm();
+        setIsSent(true);
       } catch (error) {
         console.error("Failed to send email:", error);
       } finally {
         setIsSending(false);
-        setIsSent(true);
       }
     },
   });
@@ -138,6 +155,16 @@ const Contact: FC = () => {
         )}
       </div>
     </form>
+  );
+};
+
+const Contact: FC = () => {
+  return (
+    <GoogleReCaptchaProvider
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+    >
+      <ContactForm />
+    </GoogleReCaptchaProvider>
   );
 };
 
