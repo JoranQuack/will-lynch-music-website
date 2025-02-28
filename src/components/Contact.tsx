@@ -161,7 +161,7 @@ const ContactForm: FC = () => {
 const Contact: FC = () => {
   return (
     <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
     >
       <ContactForm />
     </GoogleReCaptchaProvider>
