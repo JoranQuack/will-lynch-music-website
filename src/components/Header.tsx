@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import SVG from "react-inlinesvg";
 
 interface HeaderProps {
-  textColour: string;
+  textColour?: string;
 }
 
-export default function Header({ textColour }: HeaderProps) {
+export default function Header({ textColour = "#027223" }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
