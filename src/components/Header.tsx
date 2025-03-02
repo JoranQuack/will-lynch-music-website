@@ -35,11 +35,11 @@ export default function Header({ textColour = "#027223" }: HeaderProps) {
         />
       </Link>
       <nav className="flex gap-10 font-medium">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#browse">BROWSE</a>
-        <a href="#expertise">EXPERTISE</a>
-        <a href="#contact">CONTACT</a>
+        <Link href="/#home">HOME</Link>
+        <Link href="/#about">ABOUT</Link>
+        <Link href="/#browse">BROWSE</Link>
+        <Link href="/#expertise">EXPERTISE</Link>
+        <Link href="/#contact">CONTACT</Link>
       </nav>
     </header>
   );
