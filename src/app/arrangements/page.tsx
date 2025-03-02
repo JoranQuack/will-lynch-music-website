@@ -22,7 +22,7 @@ export default function Arrangements() {
             voice types and ranges, and am currently a certified Musicality
             judge with the Australasian Guild of Barbershop Judges!
           </p>
-          <a href="#contact" className="round-button bg-green text-white">
+          <a href="#custom" className="round-button bg-green text-white">
             ARRANGE FOR ME
           </a>
         </div>
@@ -54,12 +54,15 @@ export default function Arrangements() {
           href=""
         />
       </section>
-      <section id="custom" className="grid grid-cols-3 gap-10 px-36 pb-20">
-        <h1 className="col-span-3 text-center font-semibold text-green">
+      <section
+        id="custom"
+        className="grid grid-cols-3 gap-10 bg-pinky px-36 py-20"
+      >
+        <h1 className="col-span-3 text-center font-semibold text-dark">
           HOW IT WORKS
         </h1>
-        <div className="flex flex-col items-center gap-5 text-center text-green">
-          <IconSend color="#027223" size={100} stroke={1.5} className="h-20" />
+        <div className="flex flex-col items-center gap-5 text-center text-dark">
+          <IconSend size={100} stroke={1.5} className="h-20 stroke-dark" />
           <p>
             Send me a song you&apos;d like me to arrange, and tell me about your
             vision! This includes your desired style, voice ranges, who&apos;s
@@ -67,13 +70,8 @@ export default function Arrangements() {
             tracks.
           </p>
         </div>
-        <div className="flex flex-col items-center gap-5 text-center text-green">
-          <IconPencil
-            color="#027223"
-            size={100}
-            stroke={1.5}
-            className="h-20"
-          />
+        <div className="flex flex-col items-center gap-5 text-center text-dark">
+          <IconPencil size={100} stroke={1.5} className="h-20 stroke-dark" />
           <p>
             I&apos;ll get back to you with a quote and any further questions to
             gather a full understanding of your musical vision. Once the quote
@@ -81,12 +79,11 @@ export default function Arrangements() {
             progress.
           </p>
         </div>
-        <div className="flex flex-col items-center gap-5 text-center text-green">
+        <div className="flex flex-col items-center gap-5 text-center text-dark">
           <IconMusicHeart
-            color="#027223"
             size={100}
             stroke={1.5}
-            className="h-20"
+            className="h-20 stroke-dark"
           />
           <p>
             You get arrangement, I get money. Then we&apos;re happy dappy doo
