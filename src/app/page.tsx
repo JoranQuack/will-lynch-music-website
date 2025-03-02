@@ -3,9 +3,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Homeslide from "@/components/Homeslide";
 import Person from "@/components/Person";
-// import Video from "@/components/Video";
 import Image from "next/image";
-import SVG from "react-inlinesvg";
 
 export default function Home() {
   return (
@@ -92,7 +90,7 @@ export default function Home() {
           <div className="flex items-center bg-[url(/voice-lessons.png)] bg-cover bg-center" />
         </div>
         <div id="ensemble" className="grid grid-cols-2 bg-pinky">
-          <div className="flex items-center bg-[url(/ensemble-coaching.png)] bg-cover bg-center" />
+          <div className="flex items-center bg-[url(/ensemble-coaching.png)] bg-cover bg-right-top" />
           <div className="flex flex-col gap-5 pb-14 pl-24 pr-36 pt-20 text-dark">
             <h1 className="font-bold">ENSEMBLE COACHING</h1>
             <p>
@@ -143,7 +141,7 @@ export default function Home() {
             width={1000}
             height={1000}
             alt="performer"
-            className="h- object-cover"
+            className="object-cover"
           />
           {/* <div>
             <h2>PERFORMANCE CLIPS</h2>
