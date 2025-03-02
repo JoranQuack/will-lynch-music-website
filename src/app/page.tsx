@@ -168,11 +168,11 @@ export default function Home() {
           </div>
           <p>
             <b>EMAIL ME:</b> <br />
-            will@willlynchmusic.co.nz
+            willmclynchmusic@gmail.com
           </p>
           <p>
             <b>PHONE ME:</b> <br />
-            021 2345 6789
+            021 0724 969
           </p>
         </div>
         <Contact />

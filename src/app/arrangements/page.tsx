@@ -86,10 +86,10 @@ export default function Arrangements() {
             className="h-20 stroke-dark"
           />
           <p>
-            You get arrangement, I get money. Then we&apos;re happy dappy doo
-            this is the point when I start recording part tracks and deliver
-            them to you as soon as you need or smthing Will please re write this
-            im just makin it up
+            Once you have a draft arrangement you&apos;re happy with, I&apos;ll
+            flick through an invoice. If you&apos;ve requested learning tracks,
+            this is also the point when I&apos;ll start recording the
+            arrangement.
           </p>
         </div>
       </section>
@@ -108,11 +108,11 @@ export default function Arrangements() {
           </div>
           <p>
             <b>EMAIL ME:</b> <br />
-            will@willlynchmusic.co.nz
+            willmclynchmusic@gmail.com
           </p>
           <p>
             <b>PHONE ME:</b> <br />
-            021 2345 6789
+            021 0724 969
           </p>
         </div>
         <Contact />
