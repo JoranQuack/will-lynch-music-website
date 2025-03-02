@@ -1,5 +1,6 @@
 import Block from "@/components/Block";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Homeslide from "@/components/Homeslide";
 import Person from "@/components/Person";
 // import Video from "@/components/Video";
@@ -178,14 +179,7 @@ export default function Home() {
         </div>
         <Contact />
       </section>
-      <footer className="relative flex items-end justify-between overflow-hidden bg-green px-36 pb-20 pt-72">
-        <SVG src="/logo.svg" className="fill-white" />
-        <p className="text-white">Site by Joran Le Quellec</p>
-        <SVG
-          src="/mic.svg"
-          className="absolute bottom-0 left-3/4 h-full w-full translate-x-[40%] translate-y-[50%] scale-[200%] transform fill-black opacity-10"
-        />
-      </footer>
+      <Footer />
     </main>
   );
 }

@@ -11,6 +11,7 @@
     "build:local": "prettier --write . && next build"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.30.0",
     "@types/nodemailer": "^6.4.17",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
