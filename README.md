@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <a href="https://will-lynch-music-website.vercel.app/">
+    <img src="wlm-logo.svg" alt="Will Lynch Music" height="140">
+  </a>
+</div>
 
-## Getting Started
+# will-lynch-music-website
+Codebase for Will Lynch Music public web suite.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Package                                                                            | Description                                                                                           |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`NextJS`](https://nextjs.org/)                                                    | Used for public routing and front end                                                                 |
+| [`Typescript`](https://www.typescriptlang.org/)                                    | Used for Type Safety                                                                                  |
+| [`Tailwind`](https://tailwindcss.com/)                                             | Used as an alternative to pure css allowing styling to be done directly in html                       |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Repo Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path                               | Description                                                                                                                            |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [`public`](public)                 | Contains static assets for the website                                                    |
+| [`src/app`](src/app)               | Contains the next-js routing file structure and all page/layout specific files                     |
+| [`src/components`](src/components) | Contains front-end (or server rendered) code (not neccesarily react components)                                                        |
+| [`src/utils`](src/utils)           | Contains utility files such as send-email.ts                                    |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment
 
-## Learn More
+Config for the project is done with an untracked `.env` file.
 
-To learn more about Next.js, take a look at the following resources:
+> [!IMPORTANT]
+> This project has not been setup to work without API secrets from our services such as Google reCAPTCHA, so you will not be able to run this without being part of the dev team.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command                    | Description                                              |
+| -------------------------- | ----------------------------------------------------------------|
+| `npm run dev`              | Runs a development instance of the NextJS website.   |
+| `npm run build`            | This will build the NextJS server. It is recommended you run this before pushing. |
+| `npm run start`            | This will run an instance of the last compiled NextJS website (`npm run build`)   |
+| `npm run lint`             | Runs the linter                         |
+| `npm run format`             | Runs Prettier formatter                                |
 
-## Deploy on Vercel
+## Dev tools
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If using vscode, it is recommended you use the following packages:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). This one is **HEAVILY** recommended so you don't commit incorrect code style
+* [Tailwind CSS InteliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
