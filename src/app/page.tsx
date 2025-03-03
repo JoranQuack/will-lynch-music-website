@@ -154,29 +154,12 @@ export default function Home() {
           </div> */}
         </div>
       </section>
-      <section
-        id="contact"
-        className="grid grid-cols-2 gap-36 bg-white px-36 py-20 text-dark"
-      >
-        <div className="flex flex-col justify-start gap-10">
-          <div className="flex flex-col gap-3">
-            <h1 className="font-bold text-green">GET IN TOUCH</h1>
-            <p>
-              Want to purchase, enquire, or simply say hi? Don&apos;t hesitate,
-              get in contact. I&apos;d love to hear from you via phone or email!
-            </p>
-          </div>
-          <p>
-            <b>EMAIL ME:</b> <br />
-            willmclynchmusic@gmail.com
-          </p>
-          <p>
-            <b>PHONE ME:</b> <br />
-            021 0724 969
-          </p>
-        </div>
-        <Contact />
-      </section>
+      <Contact
+        title="GET IN TOUCH"
+        description="Want to purchase, enquire, or simply say hi? Don't hesitate, get in contact. I'd love to hear from you via phone or email!"
+        email="willmclynchmusic@gmail.com"
+        phone="021 0724 969"
+      />
       <Footer />
     </main>
   );

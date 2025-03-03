@@ -93,30 +93,12 @@ export default function Arrangements() {
           </p>
         </div>
       </section>
-      <section
-        id="contact"
-        className="grid grid-cols-2 gap-36 bg-white px-36 py-20 text-dark"
-      >
-        <div className="flex flex-col justify-start gap-10">
-          <div className="flex flex-col gap-3">
-            <h1 className="font-bold text-green">SEND ME YOUR VISION</h1>
-            <p>
-              If you&apos;re looking for a specific version or performance of
-              the song, add a URL to the message to show me what you&apos;re
-              after!
-            </p>
-          </div>
-          <p>
-            <b>EMAIL ME:</b> <br />
-            willmclynchmusic@gmail.com
-          </p>
-          <p>
-            <b>PHONE ME:</b> <br />
-            021 0724 969
-          </p>
-        </div>
-        <Contact />
-      </section>
+      <Contact
+        title="SEND ME YOUR VISION"
+        description="If you're looking for a specific version or performance of the song, add a URL to the message to show me what you're after!"
+        email="willmclynchmusic@gmail.com"
+        phone="021 0724 969"
+      />
       <Footer />
     </main>
   );

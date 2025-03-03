@@ -158,14 +158,50 @@ const ContactForm: FC = () => {
   );
 };
 
-const Contact: FC = () => {
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-    >
-      <ContactForm />
-    </GoogleReCaptchaProvider>
-  );
-};
+interface ContactProps {
+  title: string;
+  description: string;
+  email: string;
+  phone: string;
+}
 
-export default Contact;
+export default function Contact({
+  title,
+  description,
+  email,
+  phone,
+}: ContactProps) {
+  return (
+    <section
+      id="contact"
+      className="grid grid-cols-2 gap-36 bg-white px-36 py-20 text-dark"
+    >
+      <div className="flex flex-col justify-start gap-10">
+        <div className="flex flex-col gap-3">
+          <h1 className="font-bold text-green">{title}</h1>
+          <p>{description}</p>
+        </div>
+        <a href={`mailto:${email}`} className="duration-500 hover:text-green">
+          <p>
+            <b>EMAIL ME:</b> <br />
+            {email}
+          </p>
+        </a>
+        <a
+          href={`tel:${phone.replace(/\s/g, "")}`}
+          className="duration-500 hover:text-green"
+        >
+          <p>
+            <b>PHONE ME:</b> <br />
+            {phone}
+          </p>
+        </a>
+      </div>
+      <GoogleReCaptchaProvider
+        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+      >
+        <ContactForm />
+      </GoogleReCaptchaProvider>
+    </section>
+  );
+}
