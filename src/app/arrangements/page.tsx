@@ -1,53 +1,15 @@
-"use client";
-
 import ArrangementBlock from "@/components/ArrangementBlock";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { IconMusicHeart, IconPencil, IconSend } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
+import { getGoogleSheetsData } from "../api/sheets/route";
 
-// Define the type for our arrangement data
-type Arrangement = {
-  title: string;
-  voicings: string;
-  smp: string;
-  smd: string;
-  arrangedFor: string;
-  parts: string;
-  purpose: string;
-  inspiredBy: string;
-  genreStyle: string;
-  tempo: string;
-  difficulty: string;
-};
-
-export default function Arrangements() {
-  const [arrangements, setArrangements] = useState<Arrangement[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchArrangements() {
-      try {
-        const response = await fetch("/api/sheets");
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch arrangements");
-        }
-
-        const data = await response.json();
-        if (data.success && data.data) {
-          setArrangements(data.data);
-        }
-      } catch (error) {
-        console.error("Error fetching arrangement data:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchArrangements();
-  }, []);
+export default async function Arrangements() {
+  const arrangements = await getGoogleSheetsData(
+    "Arrangements",
+    process.env.ARRANGEMENTS_SPREADSHEET_ID
+  );
 
   return (
     <main className="bg-greeny pt-40">
@@ -72,20 +34,18 @@ export default function Arrangements() {
         </div>
       </section>
       <section id="arrangments" className="grid grid-cols-5 gap-10 px-36 pb-20">
-        {loading ? (
-          <div className="col-span-5 text-center">Loading arrangements...</div>
-        ) : arrangements.length > 0 ? (
-          arrangements.map((arrangement, index) => (
-            <ArrangementBlock
-              key={index}
-              title={arrangement.title}
-              src="https://drive.google.com/thumbnail?id=1_GQsSyVDuCrVzh3_pDJyPHtOndCbq_pu&sz=w500"
-              href="https://drive.google.com/thumbnail?id=1_GQsSyVDuCrVzh3_pDJyPHtOndCbq_pu&sz=w500"
-            />
-          ))
-        ) : (
-          <div className="col-span-5 text-center">No arrangements found</div>
-        )}
+        {arrangements.map((arrangement) => (
+          <ArrangementBlock
+            title={arrangement.title}
+            href="/"
+            src={
+              typeof arrangement.sampleID === "string"
+                ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w500`
+                : "/will_about.png"
+            }
+            key={arrangement.title}
+          />
+        ))}
       </section>
       <section
         id="custom"
