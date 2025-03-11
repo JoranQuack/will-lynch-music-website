@@ -18,35 +18,59 @@ export async function getGoogleSheetsData(sheetName: string, spreadsheetId: stri
 
   const sheets = google.sheets({ version: "v4", auth });
 
-  const data = await sheets.spreadsheets.values.get({
+  // First, get the values as usual
+  const valueResponse = await sheets.spreadsheets.values.get({
     spreadsheetId: spreadsheetId,
     range: sheetName,
   });
+  
+  // Get the grid data with hyperlinks
+  const gridData = await sheets.spreadsheets.get({
+    spreadsheetId: spreadsheetId,
+    ranges: [sheetName],
+    fields: "sheets.data.rowData.values.hyperlink,sheets.data.rowData.values.formattedValue"
+  });
+  
+  const hyperlinks = gridData.data.sheets?.[0]?.data?.[0]?.rowData?.map(row => {
+    return row.values?.map(cell => cell.hyperlink || cell.formattedValue) || [];
+  }) || [];
 
   function extractSampleID(url: string) {
     if (!url) return [];
     return url.split("/")[5];
   }
 
-  const unprocessedRequests = data.data.values || [];
-    const requests = unprocessedRequests.slice(1).map((row) => {
-      return {
-        title: row[0],
-        voicings: row[1],
-        smp: row[2],
-        smd: row[3],
-        arrangedFor: row[4],
-        parts: row[5],
-        purpose: row[6],
-        inspiredBy: row[7],
-        genreStyle: row[8],
-        tempo: row[9],
-        difficulty: row[10],
-        sampleID: extractSampleID(row[11])
-      };
-    });
+  function extractHyperlink(cellValue: unknown) {
+    if (typeof cellValue === "string" && cellValue.startsWith("=HYPERLINK(")) {
+      const match = cellValue.match(/=HYPERLINK\("([^"]+)",[^)]+\)/);
+      return match ? match[1] : cellValue;
+    }
+    return cellValue;
+  }
 
-    console.log(requests);
+  const unprocessedRequests = valueResponse.data.values || [];
+  const requests = unprocessedRequests.slice(1).map((row, rowIndex) => {
+    // Get hyperlinks for this row (add 1 to skip header row)
+    const rowHyperlinks = hyperlinks[rowIndex + 1] || [];
+    
+    return {
+      title: row[0],
+      voicings: row[1],
+      // Use hyperlink if available, otherwise use extracted value
+      smp: rowHyperlinks[2] || extractHyperlink(row[2]),
+      smd: rowHyperlinks[3] || extractHyperlink(row[3]),
+      arrangedFor: row[4],
+      parts: row[5],
+      purpose: row[6],
+      inspiredBy: row[7],
+      genreStyle: row[8],
+      tempo: row[9],
+      difficulty: row[10],
+      sampleID: extractSampleID(row[11])
+    };
+  });
 
-    return requests;
+  console.log(requests);
+
+  return requests;
 }
