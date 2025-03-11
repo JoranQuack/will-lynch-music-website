@@ -41,7 +41,7 @@ export default async function Arrangements() {
             src={
               typeof arrangement.sampleID === "string"
                 ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w500`
-                : "/will_about.png"
+                : "/arrangement_fallback.png"
             }
             key={arrangement.title}
           />
