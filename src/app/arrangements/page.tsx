@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { IconMusicHeart, IconPencil, IconSend } from "@tabler/icons-react";
-import { getGoogleSheetsData } from "../api/sheets/route";
+import { getGoogleSheetsData } from "@/utils/googleSheets";
 
 export default async function Arrangements() {
   const arrangements = await getGoogleSheetsData(
