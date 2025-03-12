@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "./Header";
+import Header from "../components/Header";
 import { useState, useEffect, useRef, useMemo } from "react";
 import SVG from "react-inlinesvg";
 

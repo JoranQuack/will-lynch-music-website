@@ -1,8 +1,8 @@
-import Block from "@/components/Block";
+import Block from "@/app/Block";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Homeslide from "@/components/Homeslide";
-import Person from "@/components/Person";
+import Homeslide from "@/app/Homeslide";
+import Person from "@/app/Person";
 import Image from "next/image";
 
 export default function Home() {

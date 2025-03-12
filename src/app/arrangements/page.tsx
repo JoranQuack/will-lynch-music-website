@@ -1,4 +1,4 @@
-import ArrangementBlock from "@/components/ArrangementBlock";
+import ArrangementBlock from "@/app/arrangements/ArrangementBlock";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -39,7 +39,7 @@ export default async function Arrangements() {
             title={arrangement.title}
             src={
               typeof arrangement.sampleID === "string"
-                ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w500`
+                ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w1000`
                 : "/arrangement_fallback.png"
             }
             key={arrangement.title}
@@ -97,7 +97,7 @@ export default async function Arrangements() {
       </section>
       <Contact
         title="SEND ME YOUR VISION"
-        description="If you're looking for a specific version or performance of the song, add a URL to the message to show me what you're after!"
+        description="If you're looking for a specific version or performance of the song, add a URL to the message to show me what you're after! If you're looking to purchase an arrangement, please include the song title."
         email="willmclynchmusic@gmail.com"
         phone="021 0724 969"
       />
