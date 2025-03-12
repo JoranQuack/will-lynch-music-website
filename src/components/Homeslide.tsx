@@ -58,7 +58,7 @@ export default function Homeslide() {
       >
         <div className="items flex w-2/5 flex-col gap-5">
           <h1 className="text-wrap text-6xl text-green">
-            PROFFESSIONAL <br />
+            PROFESSIONAL <br />
             <b>VOCAL ARRANGEMENTS</b>
           </h1>
           <p className="text-green">
