@@ -3,7 +3,8 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
-  const { email, firstName, lastName, message, recaptchaToken } = await request.json();
+  const { email, firstName, lastName, message, recaptchaToken } =
+    await request.json();
 
   // Verify reCAPTCHA token
   const recaptchaResponse = await fetch(

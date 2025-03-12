@@ -37,13 +37,22 @@ export default async function Arrangements() {
         {arrangements.map((arrangement) => (
           <ArrangementBlock
             title={arrangement.title}
-            href="/"
             src={
               typeof arrangement.sampleID === "string"
                 ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w500`
                 : "/arrangement_fallback.png"
             }
             key={arrangement.title}
+            arrangedFor={arrangement.arrangedFor}
+            parts={arrangement.parts}
+            purpose={arrangement.purpose}
+            style={arrangement.genreStyle}
+            difficulty={arrangement.difficulty}
+            inspiredBy={arrangement.inspiredBy}
+            tempo={arrangement.tempo}
+            voicings={arrangement.voicings}
+            smp={String(arrangement.smp || "")}
+            smd={String(arrangement.smd || "")}
           />
         ))}
       </section>
