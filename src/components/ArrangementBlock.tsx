@@ -91,7 +91,7 @@ export default function ArrangementBlock({
                     ""
                   ) : (
                     <sub className="-mt-2 text-lg text-green">
-                      Inpired by {inspiredBy}
+                      Inspired by {inspiredBy}
                     </sub>
                   )}
                   {arrangedFor === "---" ? (
