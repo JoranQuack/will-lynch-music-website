@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconX } from "@tabler/icons-react";
+import { IconX, IconMusic } from "@tabler/icons-react";
 
 interface TracksBlockProps {
   title: string;
-  src: string;
-  arrangedFor: string;
+  sampleID: string | never[];
+  arrangedBy: string;
   parts: string;
   purpose: string;
   style: string;
@@ -16,14 +15,12 @@ interface TracksBlockProps {
   inspiredBy: string;
   tempo: string;
   voicings: string;
-  smp: string;
-  smd: string;
 }
 
 export default function TracksBlock({
   title,
-  src,
-  arrangedFor,
+  sampleID,
+  arrangedBy,
   parts,
   purpose,
   style,
@@ -31,8 +28,6 @@ export default function TracksBlock({
   inspiredBy,
   tempo,
   voicings,
-  smp,
-  smd,
 }: TracksBlockProps) {
   const [isOpen, setIsOpen] = useState(false);
   const handleChildClick = (event: { stopPropagation: () => void }) => {
@@ -43,16 +38,10 @@ export default function TracksBlock({
   return (
     <AnimatePresence>
       <div
-        className="flex cursor-pointer flex-col gap-3 text-center text-green duration-500 hover:scale-105 hover:opacity-80"
+        className="flex h-20 cursor-pointer items-center justify-start gap-3 rounded-xl bg-dark p-2 px-5 text-white duration-500 hover:scale-105 hover:opacity-80"
         onClick={() => setIsOpen(true)}
       >
-        <Image
-          src={src}
-          height={500}
-          width={500}
-          alt={src}
-          className="rounded-xl"
-        />
+        <IconMusic />
         <p>{title}</p>
       </div>
       {isOpen && (
@@ -77,28 +66,24 @@ export default function TracksBlock({
               </button>
             </div>
             <div className="flex gap-10 px-5 pb-5">
-              <Image
-                src={src}
-                height={400}
-                width={400}
-                alt={src}
+              <iframe
+                src={`https://drive.google.com/file/d/${sampleID}/preview`}
+                width="500"
+                height="500"
+                allow="autoplay"
                 className="rounded-xl"
-              />
-              <div className="flex flex-col justify-between py-5">
+              ></iframe>
+              <div className="flex flex-col justify-between gap-10 py-5">
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-3xl text-green">{title}</h2>
+                  <h2 className="text-3xl text-dark">{title}</h2>
                   {inspiredBy === "---" ? (
                     ""
                   ) : (
-                    <sub className="-mt-2 text-lg text-green">
+                    <sub className="-mt-2 text-lg text-dark">
                       Inspired by {inspiredBy}
                     </sub>
                   )}
-                  {arrangedFor === "---" ? (
-                    ""
-                  ) : (
-                    <p>Arranged for {arrangedFor}</p>
-                  )}
+                  {arrangedBy === "---" ? "" : <p>Arranged by {arrangedBy}</p>}
                   <div className="mt-3 flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
                     <p className="bg-bluey">{voicings}</p>
                     <p className="bg-pinky">{parts} Parts</p>
@@ -115,42 +100,16 @@ export default function TracksBlock({
                     <p className="bg-bluey">{style.replaceAll("/ ", "/")}</p>
                   </div>
                 </div>
-                {smp === "Contact Me!" ? (
-                  <div className="flex flex-col gap-2">
-                    <p>Available for purchase:</p>
-                    <a
-                      href="#contact"
-                      onClick={() => setIsOpen(false)}
-                      className="round-button bg-green text-white"
-                    >
-                      GET IN TOUCH
-                    </a>
-                  </div>
-                ) : (
-                  <div className="flex flex-col gap-2">
-                    <p>Buy online:</p>
-                    <div className="flex gap-2">
-                      <a href={smd} target="_blank" rel="noreferrer">
-                        <Image
-                          src="/sheetmusicdirect.png"
-                          className="size-16 rounded-xl"
-                          width={100}
-                          height={100}
-                          alt="Sheet Music Direct"
-                        />
-                      </a>
-                      <a href={smp} target="_blank" rel="noreferrer">
-                        <Image
-                          src="/sheetmusicplus.png"
-                          className="size-16 rounded-xl"
-                          width={100}
-                          height={100}
-                          alt="Sheet Music Direct"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                )}
+                <div className="flex flex-col gap-2">
+                  <p>Available for purchase:</p>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="round-button bg-green text-white"
+                  >
+                    GET IN TOUCH
+                  </a>
+                </div>
               </div>
             </div>
           </div>

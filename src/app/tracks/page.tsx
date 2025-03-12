@@ -40,13 +40,9 @@ export default async function LearningTracks() {
         {tracks.map((track) => (
           <TracksBlock
             title={track.title}
-            src={
-              typeof track.sampleID === "string"
-                ? `https://drive.google.com/thumbnail?id=${track.sampleID}&sz=w1000`
-                : "/track_fallback.png"
-            }
+            sampleID={track.sampleID}
             key={track.title}
-            arrangedFor={track.arrangedFor}
+            arrangedBy={track.arrangedBy}
             parts={track.parts}
             purpose={track.purpose}
             style={track.genreStyle}
@@ -54,8 +50,6 @@ export default async function LearningTracks() {
             inspiredBy={track.inspiredBy}
             tempo={track.tempo}
             voicings={track.voicings}
-            smp={String(track.smp || "")}
-            smd={String(track.smd || "")}
           />
         ))}
       </section>

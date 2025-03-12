@@ -55,6 +55,7 @@ export async function getGoogleSheetsData(
   const requests = unprocessedRequests.slice(1).map((row, rowIndex) => {
     const rowHyperlinks = hyperlinks[rowIndex + 1] || [];
 
+    if (sheetName === "Arrangements") {
     return {
       title: row[0],
       voicings: row[1],
@@ -69,7 +70,19 @@ export async function getGoogleSheetsData(
       tempo: row[9],
       difficulty: row[10],
       sampleID: extractSampleID(row[11]),
-    };
+    };} else {
+      return {
+        title: row[0],
+        voicings: row[1],
+        arrangedBy: row[2],
+        parts: row[3],
+        purpose: row[4],
+        inspiredBy: row[5],
+        genreStyle: row[6],
+        tempo: row[7],
+        difficulty: row[8],
+        sampleID: extractSampleID(row[9]),
+      };};
   });
 
   console.log(requests);
