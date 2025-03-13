@@ -65,51 +65,49 @@ export default function TracksBlock({
                 <IconX className="h-full" />
               </button>
             </div>
-            <div className="flex gap-10 px-5 pb-5">
+            <div className="flex flex-col justify-between gap-10 px-8 py-5 pb-8">
+              <div className="flex flex-col gap-2">
+                <h2 className="text-3xl text-dark">{title}</h2>
+                {inspiredBy === "---" ? (
+                  ""
+                ) : (
+                  <sub className="-mt-2 text-lg text-dark">
+                    Inspired by {inspiredBy}
+                  </sub>
+                )}
+                {arrangedBy === "---" ? "" : <p>Arranged by {arrangedBy}</p>}
+                <div className="mt-3 flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
+                  <p className="bg-bluey">{voicings}</p>
+                  <p className="bg-pinky">{parts} Parts</p>
+                  <p className="bg-greeny">{purpose}</p>
+                  <p className="bg-pinky">
+                    {difficulty[0].toUpperCase() + difficulty.substring(1)}{" "}
+                    Difficulty
+                  </p>
+                </div>
+                <div className="flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
+                  <p className="bg-greeny">
+                    {tempo[0].toUpperCase() + tempo.substring(1)} Tempo
+                  </p>
+                  <p className="bg-bluey">{style.replaceAll("/ ", "/")}</p>
+                </div>
+              </div>
               <iframe
                 src={`https://drive.google.com/file/d/${sampleID}/preview`}
-                width="500"
-                height="500"
+                width="450"
+                height="100"
                 allow="autoplay"
                 className="rounded-xl"
               ></iframe>
-              <div className="flex flex-col justify-between gap-10 py-5">
-                <div className="flex flex-col gap-2">
-                  <h2 className="text-3xl text-dark">{title}</h2>
-                  {inspiredBy === "---" ? (
-                    ""
-                  ) : (
-                    <sub className="-mt-2 text-lg text-dark">
-                      Inspired by {inspiredBy}
-                    </sub>
-                  )}
-                  {arrangedBy === "---" ? "" : <p>Arranged by {arrangedBy}</p>}
-                  <div className="mt-3 flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
-                    <p className="bg-bluey">{voicings}</p>
-                    <p className="bg-pinky">{parts} Parts</p>
-                    <p className="bg-greeny">{purpose}</p>
-                    <p className="bg-pinky">
-                      {difficulty[0].toUpperCase() + difficulty.substring(1)}{" "}
-                      Difficulty
-                    </p>
-                  </div>
-                  <div className="flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
-                    <p className="bg-greeny">
-                      {tempo[0].toUpperCase() + tempo.substring(1)} Tempo
-                    </p>
-                    <p className="bg-bluey">{style.replaceAll("/ ", "/")}</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <p>Available for purchase:</p>
-                  <a
-                    href="#contact"
-                    onClick={() => setIsOpen(false)}
-                    className="round-button bg-green text-white"
-                  >
-                    GET IN TOUCH
-                  </a>
-                </div>
+              <div className="flex flex-col gap-2">
+                <p>Available for purchase:</p>
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="round-button bg-green text-white"
+                >
+                  GET IN TOUCH
+                </a>
               </div>
             </div>
           </div>
