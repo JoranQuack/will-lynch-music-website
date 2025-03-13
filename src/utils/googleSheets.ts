@@ -56,21 +56,22 @@ export async function getGoogleSheetsData(
     const rowHyperlinks = hyperlinks[rowIndex + 1] || [];
 
     if (sheetName === "Arrangements") {
-    return {
-      title: row[0],
-      voicings: row[1],
-      // Use hyperlink if available, otherwise use extracted value
-      smp: rowHyperlinks[2] || extractHyperlink(row[2]),
-      smd: rowHyperlinks[3] || extractHyperlink(row[3]),
-      arrangedFor: row[4],
-      parts: row[5],
-      purpose: row[6],
-      inspiredBy: row[7],
-      genreStyle: row[8],
-      tempo: row[9],
-      difficulty: row[10],
-      sampleID: extractSampleID(row[11]),
-    };} else {
+      return {
+        title: row[0],
+        voicings: row[1],
+        // Use hyperlink if available, otherwise use extracted value
+        smp: rowHyperlinks[2] || extractHyperlink(row[2]),
+        smd: rowHyperlinks[3] || extractHyperlink(row[3]),
+        arrangedFor: row[4],
+        parts: row[5],
+        purpose: row[6],
+        inspiredBy: row[7],
+        genreStyle: row[8],
+        tempo: row[9],
+        difficulty: row[10],
+        sampleID: extractSampleID(row[11]),
+      };
+    } else {
       return {
         title: row[0],
         voicings: row[1],
@@ -82,7 +83,8 @@ export async function getGoogleSheetsData(
         tempo: row[7],
         difficulty: row[8],
         sampleID: extractSampleID(row[9]),
-      };};
+      };
+    }
   });
 
   console.log(requests);
