@@ -50,7 +50,7 @@ export default function Homeslide() {
         }
         style={{ backgroundColor: bgColour }}
       ></div>
-      <Header textColour={textColour} />
+      <Header textColour={textColour} bgColour={bgColour} />
 
       <div
         id="slide1"
