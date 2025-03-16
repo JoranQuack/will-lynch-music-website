@@ -87,7 +87,5 @@ export async function getGoogleSheetsData(
     }
   });
 
-  console.log(requests);
-
   return requests;
 }
