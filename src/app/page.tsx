@@ -94,7 +94,7 @@ export default function Home() {
           <div className="flex flex-col gap-5 pb-14 pl-24 pr-36 pt-20 text-dark">
             <h1 className="font-bold">ENSEMBLE COACHING</h1>
             <p>
-              I'm an experienced performer, director and coach with a huge
+              I&apos;m an experienced performer, director and coach with a huge
               passion for creating meaningful music and impactful performances.
               I would love to share what I can to help your group reach its full
               potential, so get in touch to book your slot today!

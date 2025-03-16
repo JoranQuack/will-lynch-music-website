@@ -9,7 +9,7 @@ import { useClickAway } from "react-use";
 
 interface HeaderProps {
   textColour?: string;
-  bgColour: string;
+  bgColour?: string;
 }
 
 const routes = [
@@ -99,15 +99,23 @@ const NavMobile = ({ colour, bgColour }: NavMobileProps) => {
 
 export default function Header({
   textColour = "#027223",
-  bgColour,
+  bgColour = "#FFFFFF",
 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () =>
-        setScrolled(window.pageYOffset > 5)
-      );
+      // Check initial scroll position immediately
+      setScrolled(window.pageYOffset > 5);
+
+      // Add event listener for future scrolling
+      const handleScroll = () => setScrolled(window.pageYOffset > 5);
+      window.addEventListener("scroll", handleScroll);
+
+      // Clean up the event listener when component unmounts
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
   }, []);
 
