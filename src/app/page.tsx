@@ -94,16 +94,10 @@ export default function Home() {
           <div className="flex flex-col gap-5 pb-14 pl-24 pr-36 pt-20 text-dark">
             <h1 className="font-bold">ENSEMBLE COACHING</h1>
             <p>
-              I ❤️ barbershop a lot and I ❤️ helping groups to develop skills in
-              barbershop. I&apos;ve amassed a strong knowledge base of the
-              barbershop craft and style through 10 years of experience singing
-              and performing in some wonderful groups, including the current
-              BHNZ silver medallist quartet Promenade and current Australasian
-              silver medallist chorus Quantum Acoustics (I get to direct them
-              every week!). I&apos;m currently a certified Musicality judge in
-              the Australasian Guild of Barbershop Judges, and I would love to
-              work with your group to help you find all the best ways to connect
-              with your audience and achieve your goals.
+              I'm an experienced performer, director and coach with a huge
+              passion for creating meaningful music and impactful performances.
+              I would love to share what I can to help your group reach its full
+              potential, so get in touch to book your slot today!
             </p>
             <a className="round-button bg-dark text-white" href="#contact">
               GET IN TOUCH
