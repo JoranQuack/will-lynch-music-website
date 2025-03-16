@@ -13,7 +13,7 @@ export default async function Arrangements() {
 
   return (
     <main className="bg-greeny pt-40">
-      <Header />
+      <Header bgColour="#BDE9C9" />
       <section id="about" className="flex w-full justify-center pb-20">
         <div className="flex w-1/3 flex-col items-center gap-5 text-center text-green">
           <h1>

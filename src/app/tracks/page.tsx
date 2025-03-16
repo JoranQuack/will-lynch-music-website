@@ -13,7 +13,7 @@ export default async function LearningTracks() {
 
   return (
     <main className="bg-bluey pt-40">
-      <Header textColour="#3E464F" />
+      <Header textColour="#3E464F" bgColour="#C4D9F2" />
       <section id="about" className="flex w-full justify-center pb-20">
         <div className="flex w-1/3 flex-col items-center gap-5 text-center text-dark">
           <h1>
