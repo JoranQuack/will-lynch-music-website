@@ -15,10 +15,10 @@ export default function Block({
 }: BlockProps) {
   return (
     <a
-      className={`${className} group relative h-96 overflow-hidden rounded-xl`}
+      className={`${className} group relative h-52 overflow-hidden rounded-xl lg:h-96`}
       href={`/${id.split("-").join("#")}`}
     >
-      <div className="absolute z-20 flex h-96 w-full flex-col items-start justify-end px-8 py-6">
+      <div className="absolute z-20 flex h-full w-full flex-col items-start justify-end px-8 py-6">
         <h1 className="text-4xl font-bold">{title}</h1>
         <p>{description}</p>
       </div>

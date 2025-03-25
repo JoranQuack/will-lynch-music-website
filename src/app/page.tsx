@@ -13,16 +13,16 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="z-20 flex w-screen items-center justify-center bg-green pr-36"
+        className="z-20 flex w-screen flex-col-reverse items-center justify-center bg-green px-8 pt-20 lg:flex-row lg:pr-36 lg:pt-0"
       >
         <Image
           src="/will_about.png"
           width={1000}
           height={1000}
           alt="will_about"
-          className="-mr-60"
+          className="-mt-7 lg:-mr-60 lg:mt-0"
         />
-        <div className="flex w-1/3 flex-col gap-3">
+        <div className="flex w-full flex-col gap-3 lg:w-1/3">
           <h1 className="font-bold text-white">ABOUT ME</h1>
           <h2 className="text-xl font-medium text-greeny">
             Your friendly neighbourhood freelance musician!
@@ -39,32 +39,32 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="browse" className="px-36 py-20">
+      <section id="browse" className="px-8 py-10 lg:px-36 lg:py-20">
         <div className="mb-10 flex w-full justify-center">
           <h1 className="font-bold text-green">BROWSE</h1>
         </div>
         <div className="mb-10 grid grid-cols-5 gap-5">
           <Block
             id="arrangements"
-            className="col-span-3 bg-bluey text-dark"
+            className="col-span-5 bg-bluey text-dark lg:col-span-3"
             title="ARRANGEMENTS"
             description="Discover my arranging style through these examples."
           />
           <Block
             id="arrangements-custom"
-            className="col-span-2 bg-greeny text-green"
+            className="col-span-2 hidden bg-greeny text-green lg:block"
             title="CUSTOM ARRANGEMENTS"
             description="Commission your custom arrangement today."
           />
           <Block
             id="tracks-custom"
-            className="col-span-2 bg-greeny text-green"
+            className="col-span-2 hidden bg-greeny text-green lg:block"
             title="YOUR TRACKS"
             description="Personalized practice tracks designed to meet your specific needs."
           />
           <Block
             id="tracks"
-            className="col-span-3 bg-pinky text-dark"
+            className="col-span-5 bg-pinky text-dark lg:col-span-3"
             title="LEARNING TRACKS"
             description="Browse available learning tracks."
           />

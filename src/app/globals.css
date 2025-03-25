@@ -27,7 +27,7 @@ nav a {
 }
 
 h1 {
-  @apply text-5xl;
+  @apply text-4xl lg:text-5xl;
 }
 
 h2 {
