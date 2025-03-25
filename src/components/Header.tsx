@@ -49,7 +49,7 @@ const NavMobile = ({ colour, bgColour }: NavMobileProps) => {
   });
 
   return (
-    <div ref={ref} className="flex justify-end lg:hidden">
+    <div ref={ref} className="-mr-2 flex justify-end lg:hidden">
       <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
       <AnimatePresence>
         {isOpen && (

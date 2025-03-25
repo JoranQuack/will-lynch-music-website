@@ -71,8 +71,11 @@ export default function Home() {
         </div>
       </section>
       <section id="expertise">
-        <div id="voice-lessons" className="grid grid-cols-2 bg-bluey">
-          <div className="flex flex-col gap-5 px-36 pb-14 pt-20 text-dark">
+        <div
+          id="voice-lessons"
+          className="grid grid-cols-1 bg-bluey lg:grid-cols-2"
+        >
+          <div className="flex flex-col items-center gap-5 px-8 py-10 text-center text-dark lg:items-start lg:px-36 lg:pb-14 lg:pt-20 lg:text-left">
             <h1 className="font-bold">VOICE LESSONS</h1>
             <p>
               Since going through the Specialist Music Programme in high school,
@@ -87,11 +90,11 @@ export default function Home() {
               GET IN TOUCH
             </a>
           </div>
-          <div className="flex items-center bg-[url(/voice-lessons.png)] bg-cover bg-center" />
+          <div className="flex min-h-60 items-center bg-[url(/voice-lessons.png)] bg-cover bg-center" />
         </div>
-        <div id="ensemble" className="grid grid-cols-2 bg-pinky">
-          <div className="flex items-center bg-[url(/ensemble-coaching.png)] bg-cover bg-right-top" />
-          <div className="flex flex-col gap-5 pb-14 pl-24 pr-36 pt-20 text-dark">
+        <div id="ensemble" className="grid grid-cols-1 bg-pinky lg:grid-cols-2">
+          <div className="flex min-h-60 items-center bg-[url(/ensemble-coaching.png)] bg-cover bg-right-top" />
+          <div className="flex flex-col items-center gap-5 px-8 py-10 text-center text-dark lg:items-start lg:px-36 lg:pb-14 lg:pl-20 lg:pt-20 lg:text-left">
             <h1 className="font-bold">ENSEMBLE COACHING</h1>
             <p>
               I&apos;m an experienced performer, director and coach with a huge
@@ -104,9 +107,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="flex h-[40rem] justify-between gap-32 bg-greeny pl-36">
-          <div className="flex h-full items-center">
-            <div className="flex w-64 flex-col gap-5 py-20 text-green">
+        <div className="flex flex-col justify-between gap-5 bg-greeny px-8 pt-10 lg:h-[40rem] lg:flex-row lg:gap-32 lg:pl-36 lg:pt-0">
+          <div className="flex h-full w-full items-center">
+            <div className="flex flex-col items-center gap-5 py-0 text-center text-green lg:w-64 lg:items-start lg:py-20 lg:text-left">
               <h1>
                 YEP, I&apos;M A <br /> <b>PERFORMER</b>
               </h1>
@@ -121,7 +124,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex h-full items-center py-20">
+          <div className="flex h-full items-center py-5 lg:py-20">
             <div className="grid h-96 w-80 grid-cols-2 gap-5">
               <h2 className="col-span-2">PEOPLE I&apos;VE WORKED WITH</h2>
               <Person src="/tto.jpg" name="Toi Toi Opera" />
@@ -137,15 +140,6 @@ export default function Home() {
             alt="performer"
             className="object-cover"
           />
-          {/* <div>
-            <h2>PERFORMANCE CLIPS</h2>
-            <div className="mt-5 grid grid-cols-2 gap-8">
-              <Video src="/voice-lessons.png" name="Me being cool" />
-              <Video src="/voice-lessons.png" name="Me being cool" />
-              <Video src="/voice-lessons.png" name="Me being cool" />
-              <Video src="/voice-lessons.png" name="Me being cool" />
-            </div>
-          </div> */}
         </div>
       </section>
       <Contact
