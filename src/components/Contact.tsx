@@ -73,6 +73,9 @@ const ContactForm: FC = () => {
 
   return (
     <form className="flex flex-col gap-8" onSubmit={formik.handleSubmit}>
+      <h2 className="block text-center text-2xl lg:hidden">
+        SEND ME A MESSAGE
+      </h2>
       <div className="grid grid-cols-2 gap-2">
         <div className="form-field">
           <label htmlFor="firstName">First Name</label>
@@ -174,7 +177,7 @@ export default function Contact({
   return (
     <section
       id="contact"
-      className="grid grid-cols-2 gap-36 bg-white px-36 py-20 text-dark"
+      className="grid grid-cols-1 gap-10 bg-white px-8 py-10 text-dark lg:grid-cols-2 lg:gap-36 lg:px-36 lg:py-20"
     >
       <div className="flex flex-col justify-start gap-10">
         <div className="flex flex-col gap-3">
