@@ -58,7 +58,7 @@ textarea {
 }
 
 .slide-button {
-  @apply h-full w-14 rounded-full bg-white duration-500 hover:opacity-50;
+  @apply h-full w-14 rounded-full bg-white duration-500 lg:hover:opacity-50;
 }
 
 .active {

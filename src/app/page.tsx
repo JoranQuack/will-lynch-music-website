@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
-      <section id="home" className="h-screen w-screen">
+    <main className="overflow-x-hidden">
+      <section id="home" className="block h-screen w-screen">
         <Homeslide />
       </section>
       <section
