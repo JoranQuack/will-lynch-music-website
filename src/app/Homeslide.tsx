@@ -97,10 +97,7 @@ export default function Homeslide() {
             learning tracks or revoicing of an existing set, don&apos;t hesitate
             to get in touch.
           </p>
-          <a
-            href="/learning-tracks"
-            className="round-button bg-dark text-white"
-          >
+          <a href="/tracks" className="round-button bg-dark text-white">
             EXPLORE
           </a>
         </div>
