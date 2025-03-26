@@ -6,7 +6,7 @@ import { IconX, IconMusic } from "@tabler/icons-react";
 
 interface TracksBlockProps {
   title: string;
-  sampleID: string | never[];
+  sampleID: string | string[];
   arrangedBy: string;
   parts: string;
   purpose: string;

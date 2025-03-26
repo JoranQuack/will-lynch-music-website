@@ -1,9 +1,39 @@
 import { google } from "googleapis";
 
+export interface ArrangementData {
+  title: string;
+  voicings: string;
+  smp: string | unknown;
+  smd: string | unknown;
+  arrangedFor: string;
+  parts: string;
+  purpose: string;
+  inspiredBy: string;
+  genreStyle: string;
+  tempo: string;
+  difficulty: string;
+  sampleID: string | string[];
+}
+
+export interface TrackData {
+  title: string;
+  voicings: string;
+  arrangedBy: string;
+  parts: string;
+  purpose: string;
+  inspiredBy: string;
+  genreStyle: string;
+  tempo: string;
+  difficulty: string;
+  sampleID: string | string[];
+}
+
+export type SheetData = ArrangementData | TrackData;
+
 export async function getGoogleSheetsData(
   sheetName: string,
   spreadsheetId: string | undefined
-) {
+): Promise<SheetData[]> {
   const auth = await google.auth.getClient({
     projectId: process.env.GOOGLE_PROJECT_ID,
     credentials: {
@@ -70,7 +100,7 @@ export async function getGoogleSheetsData(
         tempo: row[9],
         difficulty: row[10],
         sampleID: extractSampleID(row[11]),
-      };
+      } as ArrangementData;
     } else {
       return {
         title: row[0],
@@ -83,7 +113,7 @@ export async function getGoogleSheetsData(
         tempo: row[7],
         difficulty: row[8],
         sampleID: extractSampleID(row[9]),
-      };
+      } as TrackData;
     }
   });
 

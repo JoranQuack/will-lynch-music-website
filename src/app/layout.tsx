@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
 import "./globals.css";
+import Loading from "@/components/Loading";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -30,7 +32,7 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
     >
       <body className={`${quicksand.variable} overflow-x-hidden antialiased`}>
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <Analytics />
         <SpeedInsights />
       </body>

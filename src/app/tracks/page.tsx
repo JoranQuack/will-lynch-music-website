@@ -3,13 +3,13 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { IconMicrophone2, IconMusicHeart, IconSend } from "@tabler/icons-react";
-import { getGoogleSheetsData } from "@/utils/googleSheets";
+import { getGoogleSheetsData, TrackData } from "@/utils/googleSheets";
 
 export default async function LearningTracks() {
-  const tracks = await getGoogleSheetsData(
+  const tracks = (await getGoogleSheetsData(
     "Tracks",
     process.env.TRACKS_SPREADSHEET_ID
-  );
+  )) as TrackData[];
 
   return (
     <main className="bg-bluey pt-40">
@@ -37,7 +37,7 @@ export default async function LearningTracks() {
         </div>
       </section>
       <section
-        id="arrangments"
+        id="tracks"
         className="grid grid-cols-1 gap-5 px-8 pb-20 lg:grid-cols-5 lg:gap-10 lg:px-36"
       >
         {tracks.map((track) => (

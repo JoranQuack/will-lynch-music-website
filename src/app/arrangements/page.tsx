@@ -3,13 +3,13 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { IconMusicHeart, IconPencil, IconSend } from "@tabler/icons-react";
-import { getGoogleSheetsData } from "@/utils/googleSheets";
+import { ArrangementData, getGoogleSheetsData } from "@/utils/googleSheets";
 
 export default async function Arrangements() {
-  const arrangements = await getGoogleSheetsData(
+  const arrangements = (await getGoogleSheetsData(
     "Arrangements",
     process.env.ARRANGEMENTS_SPREADSHEET_ID
-  );
+  )) as ArrangementData[];
 
   return (
     <main className="bg-greeny pt-40">
@@ -34,7 +34,7 @@ export default async function Arrangements() {
         </div>
       </section>
       <section
-        id="arrangments"
+        id="arrangements"
         className="grid grid-cols-2 gap-10 px-8 pb-20 lg:grid-cols-5 lg:px-36"
       >
         {arrangements.map((arrangement) => (
