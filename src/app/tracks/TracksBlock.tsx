@@ -38,11 +38,11 @@ export default function TracksBlock({
   return (
     <AnimatePresence>
       <div
-        className="flex h-20 cursor-pointer items-center justify-start gap-3 rounded-xl bg-dark p-2 px-5 text-white duration-500 hover:scale-105 hover:opacity-80"
+        className="flex min-h-24 cursor-pointer items-center justify-start gap-3 rounded-xl bg-dark p-2 px-5 text-white duration-500 hover:scale-105 hover:opacity-80"
         onClick={() => setIsOpen(true)}
       >
-        <IconMusic />
-        <p>{title}</p>
+        <IconMusic className="w-10" />
+        <p className="w-full break-all">{title}</p>
       </div>
       {isOpen && (
         <motion.div
