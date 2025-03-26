@@ -15,23 +15,23 @@ interface HeaderProps {
 const routes = [
   {
     title: "HOME",
-    href: "#home",
+    href: "/#home",
   },
   {
     title: "ABOUT",
-    href: "#about",
+    href: "/#about",
   },
   {
     title: "BROWSE",
-    href: "#browse",
+    href: "/#browse",
   },
   {
     title: "EXPERTISE",
-    href: "#expertise",
+    href: "/#expertise",
   },
   {
     title: "CONTACT",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 
