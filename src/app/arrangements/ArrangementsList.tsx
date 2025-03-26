@@ -38,34 +38,36 @@ export default function ArrangementsList({
           onChange={handleChange}
         />
       </div>
-      <div className="grid min-h-96 grid-cols-2 gap-10 lg:grid-cols-5">
-        {filtered.length === 0 ? (
-          <div className="col-span-2 flex h-fit w-full justify-center lg:col-span-5">
-            <p className="text-green">I don&apos;t have that one yet!</p>
-          </div>
-        ) : (
-          filtered.map((arrangement) => (
-            <ArrangementBlock
-              title={arrangement.title}
-              src={
-                typeof arrangement.sampleID === "string"
-                  ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w1000`
-                  : "/arrangement_fallback.png"
-              }
-              key={arrangement.title}
-              arrangedFor={arrangement.arrangedFor}
-              parts={arrangement.parts}
-              purpose={arrangement.purpose}
-              style={arrangement.genreStyle}
-              difficulty={arrangement.difficulty}
-              inspiredBy={arrangement.inspiredBy}
-              tempo={arrangement.tempo}
-              voicings={arrangement.voicings}
-              smp={String(arrangement.smp || "")}
-              smd={String(arrangement.smd || "")}
-            />
-          ))
-        )}
+      <div className="min-h-96">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
+          {filtered.length === 0 ? (
+            <div className="col-span-2 flex h-fit w-full justify-center lg:col-span-5">
+              <p className="text-green">I don&apos;t have that one yet!</p>
+            </div>
+          ) : (
+            filtered.map((arrangement) => (
+              <ArrangementBlock
+                title={arrangement.title}
+                src={
+                  typeof arrangement.sampleID === "string"
+                    ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w1000`
+                    : "/arrangement_fallback.png"
+                }
+                key={arrangement.title}
+                arrangedFor={arrangement.arrangedFor}
+                parts={arrangement.parts}
+                purpose={arrangement.purpose}
+                style={arrangement.genreStyle}
+                difficulty={arrangement.difficulty}
+                inspiredBy={arrangement.inspiredBy}
+                tempo={arrangement.tempo}
+                voicings={arrangement.voicings}
+                smp={String(arrangement.smp || "")}
+                smd={String(arrangement.smd || "")}
+              />
+            ))
+          )}
+        </div>
       </div>
     </section>
   );
