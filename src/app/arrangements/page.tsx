@@ -61,7 +61,7 @@ export default async function Arrangements() {
       </section>
       <section
         id="custom"
-        className="grid grid-cols-1 gap-10 bg-pinky px-8 py-20 lg:grid-cols-3 lg:px-36"
+        className="grid grid-cols-1 gap-5 bg-pinky px-8 py-20 lg:grid-cols-3 lg:gap-10 lg:px-36"
       >
         <h1 className="col-span-1 text-center font-semibold text-dark lg:col-span-3">
           HOW IT WORKS

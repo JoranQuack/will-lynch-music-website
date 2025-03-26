@@ -15,7 +15,7 @@ export default async function LearningTracks() {
     <main className="bg-bluey pt-40">
       <Header textColour="#3E464F" bgColour="#C4D9F2" />
       <section id="about" className="flex w-full justify-center pb-20">
-        <div className="flex w-1/3 flex-col items-center gap-5 text-center text-dark">
+        <div className="flex flex-col items-center gap-5 px-8 text-center text-dark lg:w-1/3">
           <h1>
             MY <b>TRACKS</b>
           </h1>
@@ -36,7 +36,10 @@ export default async function LearningTracks() {
           </a>
         </div>
       </section>
-      <section id="arrangments" className="grid grid-cols-5 gap-10 px-36 pb-20">
+      <section
+        id="arrangments"
+        className="grid grid-cols-1 gap-5 px-8 pb-20 lg:grid-cols-5 lg:gap-10 lg:px-36"
+      >
         {tracks.map((track) => (
           <TracksBlock
             title={track.title}
@@ -55,9 +58,9 @@ export default async function LearningTracks() {
       </section>
       <section
         id="custom"
-        className="grid grid-cols-3 gap-10 bg-pinky px-36 py-20"
+        className="grid grid-cols-1 gap-10 bg-pinky px-8 py-20 lg:grid-cols-3 lg:px-36"
       >
-        <h1 className="col-span-3 text-center font-semibold text-dark">
+        <h1 className="col-span-1 text-center font-semibold text-dark lg:col-span-3">
           HOW IT WORKS
         </h1>
         <div className="flex flex-col items-center gap-5 text-center text-dark">
