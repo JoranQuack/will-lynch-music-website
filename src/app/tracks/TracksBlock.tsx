@@ -50,11 +50,11 @@ export default function TracksBlock({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-40 flex cursor-pointer items-center justify-center backdrop-blur-lg"
+          className="fixed inset-0 z-40 flex cursor-pointer items-center justify-center p-8 backdrop-blur-lg lg:p-0"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="cursor-default rounded-xl bg-white p-3"
+            className="w-full cursor-default rounded-xl bg-white p-3"
             onClick={handleChildClick}
           >
             <div className="flex w-full justify-end">
@@ -65,18 +65,22 @@ export default function TracksBlock({
                 <IconX className="h-full" />
               </button>
             </div>
-            <div className="flex flex-col justify-between gap-10 px-8 py-5 pb-8">
+            <div className="flex flex-col justify-between gap-10 p-4 lg:px-8 lg:py-5 lg:pb-8">
               <div className="flex flex-col gap-2">
-                <h2 className="text-3xl text-dark">{title}</h2>
+                <h2 className="text-2xl text-dark lg:text-3xl">{title}</h2>
                 {inspiredBy === "---" ? (
                   ""
                 ) : (
-                  <sub className="-mt-2 text-lg text-dark">
+                  <sub className="-mt-2 text-base text-dark">
                     Inspired by {inspiredBy}
                   </sub>
                 )}
-                {arrangedBy === "---" ? "" : <p>Arranged by {arrangedBy}</p>}
-                <div className="mt-3 flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
+                {arrangedBy === "---" ? (
+                  ""
+                ) : (
+                  <p className="text-sm">Arranged by {arrangedBy}</p>
+                )}
+                <div className="mt-3 flex flex-wrap gap-2 text-sm lg:text-base [&>p]:h-fit [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
                   <p className="bg-bluey">{voicings}</p>
                   <p className="bg-pinky">{parts} Parts</p>
                   <p className="bg-greeny">{purpose}</p>
@@ -84,8 +88,6 @@ export default function TracksBlock({
                     {difficulty[0].toUpperCase() + difficulty.substring(1)}{" "}
                     Difficulty
                   </p>
-                </div>
-                <div className="flex gap-2 [&>p]:rounded-full [&>p]:p-1 [&>p]:px-3">
                   <p className="bg-greeny">
                     {tempo[0].toUpperCase() + tempo.substring(1)} Tempo
                   </p>
@@ -97,7 +99,7 @@ export default function TracksBlock({
                 width="450"
                 height="100"
                 allow="autoplay"
-                className="rounded-xl"
+                className="w-full rounded-xl lg:w-auto"
               ></iframe>
               <div className="flex flex-col gap-2">
                 <p>Available for purchase:</p>
