@@ -139,11 +139,11 @@ export default function Header({
         />
       </Link>
       <nav className="hidden gap-10 font-medium lg:flex">
-        <Link href="/#home">HOME</Link>
-        <Link href="/#about">ABOUT</Link>
-        <Link href="/#browse">BROWSE</Link>
-        <Link href="/#expertise">EXPERTISE</Link>
-        <Link href="/#contact">CONTACT</Link>
+        {routes.map((route) => (
+          <Link key={route.title} href={route.href}>
+            {route.title}
+          </Link>
+        ))}
       </nav>
       <NavMobile colour={colour} bgColour={bgColourScroll} />
     </header>
