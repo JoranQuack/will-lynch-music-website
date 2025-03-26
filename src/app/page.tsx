@@ -107,9 +107,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col justify-between gap-5 bg-greeny px-8 pt-10 lg:h-[40rem] lg:flex-row lg:gap-32 lg:pl-36 lg:pt-0">
-          <div className="flex h-full w-full items-center">
-            <div className="flex flex-col items-center gap-5 py-0 text-center text-green lg:w-64 lg:items-start lg:py-20 lg:text-left">
+        <div className="flex w-screen flex-col items-center justify-start gap-5 bg-greeny px-8 pt-10 lg:h-[40rem] lg:flex-row lg:items-end lg:pl-36 lg:pt-0">
+          <div className="flex h-full items-center">
+            <div className="flex flex-col items-center gap-5 py-0 text-center text-green lg:w-[25vw] lg:items-start lg:py-20 lg:text-left">
               <h1>
                 YEP, I&apos;M A <br /> <b>PERFORMER</b>
               </h1>
@@ -124,9 +124,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex h-full items-center py-5 lg:py-20">
-            <div className="grid h-96 w-80 grid-cols-2 gap-5">
-              <h2 className="col-span-2">PEOPLE I&apos;VE WORKED WITH</h2>
+          <div className="z-10 flex h-full items-center py-5">
+            <div className="grid grid-cols-2 gap-5 lg:w-[25vw]">
+              <h2 className="col-span-2 text-center">
+                PEOPLE I&apos;VE WORKED WITH
+              </h2>
               <Person src="/tto.jpg" name="Toi Toi Opera" />
               <Person src="/tec.jpg" name="The Entertainment Company" />
               <Person src="/ck.jpg" name="Cirko Kali" />
@@ -138,7 +140,7 @@ export default function Home() {
             width={1000}
             height={1000}
             alt="performer"
-            className="object-cover"
+            className="object-scale-down object-right-bottom lg:w-[40vw]"
           />
         </div>
       </section>
