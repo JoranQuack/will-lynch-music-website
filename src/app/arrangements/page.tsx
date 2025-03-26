@@ -1,9 +1,9 @@
-import ArrangementBlock from "@/app/arrangements/ArrangementBlock";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { IconMusicHeart, IconPencil, IconSend } from "@tabler/icons-react";
 import { ArrangementData, getGoogleSheetsData } from "@/utils/googleSheets";
+import ArrangementsList from "./ArrangementsList";
 
 export default async function Arrangements() {
   const arrangements = (await getGoogleSheetsData(
@@ -33,32 +33,7 @@ export default async function Arrangements() {
           </a>
         </div>
       </section>
-      <section
-        id="arrangements"
-        className="grid grid-cols-2 gap-10 px-8 pb-20 lg:grid-cols-5 lg:px-36"
-      >
-        {arrangements.map((arrangement) => (
-          <ArrangementBlock
-            title={arrangement.title}
-            src={
-              typeof arrangement.sampleID === "string"
-                ? `https://drive.google.com/thumbnail?id=${arrangement.sampleID}&sz=w1000`
-                : "/arrangement_fallback.png"
-            }
-            key={arrangement.title}
-            arrangedFor={arrangement.arrangedFor}
-            parts={arrangement.parts}
-            purpose={arrangement.purpose}
-            style={arrangement.genreStyle}
-            difficulty={arrangement.difficulty}
-            inspiredBy={arrangement.inspiredBy}
-            tempo={arrangement.tempo}
-            voicings={arrangement.voicings}
-            smp={String(arrangement.smp || "")}
-            smd={String(arrangement.smd || "")}
-          />
-        ))}
-      </section>
+      <ArrangementsList arrangements={arrangements} />
       <section
         id="custom"
         className="grid grid-cols-1 gap-5 bg-pinky px-8 py-20 lg:grid-cols-3 lg:gap-10 lg:px-36"
