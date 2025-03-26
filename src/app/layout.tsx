@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Freelance musician from Christchurch, New Zealand. Specialising in arranging, recording, vocal coaching, ensemble coaching, and performing!",
 };
 
-export const revalidate = 3600; // revalidate at most every hour
+export const revalidate = 86400; // revalidate at most every day
 
 export default function RootLayout({
   children,
