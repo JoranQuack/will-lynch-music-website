@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
 import "./globals.css";
 import Loading from "@/components/Loading";
+import FadeIn from "@/components/FadeIn";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -32,7 +33,10 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
     >
       <body className={`${quicksand.variable} overflow-x-hidden antialiased`}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>
+          <FadeIn />
+          {children}
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>
