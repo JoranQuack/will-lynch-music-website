@@ -54,7 +54,7 @@ export default function TracksBlock({
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="w-full cursor-default rounded-xl bg-white p-3"
+            className="w-full cursor-default rounded-xl bg-white p-3 lg:w-1/3"
             onClick={handleChildClick}
           >
             <div className="flex w-full justify-end">
