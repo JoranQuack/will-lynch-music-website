@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
 import Header from "../components/Header";
 import { useState, useEffect, useRef, useMemo } from "react";
 import SVG from "react-inlinesvg";
@@ -159,44 +160,54 @@ export default function Homeslide() {
       ></div>
 
       <div className="absolute bottom-20 z-30 flex h-3 w-full justify-center px-8 lg:justify-start lg:px-36">
-        <div className="flex gap-2">
-          <button
-            className={`${slide === 1 ? "active" : ""} slide-button`}
-            onClick={() => handleClick(1)}
-          >
-            <div
-              className={`${slide === 1 ? "active" : "inactive"} progress-bar`}
-              style={{ background: textColour }}
-            ></div>
-          </button>
-          <button
-            className={`${slide === 2 ? "active" : ""} slide-button`}
-            onClick={() => handleClick(2)}
-          >
-            <div
-              className={`${slide === 2 ? "active" : "inactive"} progress-bar`}
-              style={{ background: textColour }}
-            ></div>
-          </button>
-          <button
-            className={`${slide === 3 ? "active" : ""} slide-button`}
-            onClick={() => handleClick(3)}
-          >
-            <div
-              className={`${slide === 3 ? "active" : "inactive"} progress-bar`}
-              style={{ background: textColour }}
-            ></div>
-          </button>
-          <button
-            className={`${slide === 4 ? "active" : ""} slide-button`}
-            onClick={() => handleClick(4)}
-          >
-            <div
-              className={`${slide === 4 ? "active" : "inactive"} progress-bar`}
-              style={{ background: textColour }}
-            ></div>
-          </button>
-        </div>
+        <AnimatePresence>
+          <div className="flex gap-2">
+            <button
+              className={`${slide === 1 ? "active" : ""} slide-button`}
+              onClick={() => handleClick(1)}
+            >
+              <motion.div
+                animate={{ opacity: slide === 1 ? 1 : 0 }}
+                transition={{ duration: 0 }}
+                className="progress-bar active"
+                style={{ background: textColour }}
+              />
+            </button>
+            <button
+              className={`${slide === 2 ? "active" : ""} slide-button`}
+              onClick={() => handleClick(2)}
+            >
+              <motion.div
+                animate={{ opacity: slide === 2 ? 1 : 0 }}
+                transition={{ duration: 0 }}
+                className="progress-bar active"
+                style={{ background: textColour }}
+              />
+            </button>
+            <button
+              className={`${slide === 3 ? "active" : ""} slide-button`}
+              onClick={() => handleClick(3)}
+            >
+              <motion.div
+                animate={{ opacity: slide === 3 ? 1 : 0 }}
+                transition={{ duration: 0 }}
+                className="progress-bar active"
+                style={{ background: textColour }}
+              />
+            </button>
+            <button
+              className={`${slide === 4 ? "active" : ""} slide-button`}
+              onClick={() => handleClick(4)}
+            >
+              <motion.div
+                animate={{ opacity: slide === 4 ? 1 : 0 }}
+                transition={{ duration: 0 }}
+                className="progress-bar active"
+                style={{ background: textColour }}
+              />
+            </button>
+          </div>
+        </AnimatePresence>
       </div>
     </div>
   );

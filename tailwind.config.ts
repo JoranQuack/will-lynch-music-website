@@ -27,7 +27,7 @@ export default {
       },
     },
     animation: {
-      "slide-button": "slide-button 7s linear",
+      "slide-button": "slide-button 7s linear forwards normal",
     },
   },
   plugins: [],
