@@ -19,8 +19,8 @@ export default function Block({
       href={`/${id.split("-").join("#")}`}
     >
       <div className="absolute z-20 flex h-full w-full flex-col items-start justify-end px-8 py-6">
-        <h1 className="text-4xl font-bold">{title}</h1>
-        <p>{description}</p>
+        <h1 className="text-2xl font-bold lg:text-4xl">{title}</h1>
+        <p className="text-sm lg:text-base">{description}</p>
       </div>
       <Image
         src={`/${id}.png`}
