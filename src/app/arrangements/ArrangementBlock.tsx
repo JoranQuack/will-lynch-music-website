@@ -82,7 +82,7 @@ export default function ArrangementBlock({
                 height={400}
                 width={400}
                 alt={src}
-                className="rounded-xl"
+                className="h-96 w-auto rounded-xl lg:h-[70vh]"
               />
               <div className="flex flex-col justify-between py-2 lg:py-5">
                 <div className="flex flex-col gap-2">

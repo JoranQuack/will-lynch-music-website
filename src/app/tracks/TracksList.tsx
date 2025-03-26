@@ -37,7 +37,7 @@ export default function TracksList({ tracks }: TracksListProps) {
         />
       </div>
       <div className="min-h-96">
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-5 lg:gap-10">
           {filtered.length === 0 ? (
             <div className="col-span-2 flex h-fit w-full justify-center lg:col-span-5">
               <p className="text-dark">I don&apos;t have that one yet!</p>
