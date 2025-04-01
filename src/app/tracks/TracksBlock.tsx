@@ -42,7 +42,7 @@ export default function TracksBlock({
         onClick={() => setIsOpen(true)}
       >
         <IconMusic className="w-10" />
-        <p className="w-full break-all">{title}</p>
+        <p className={`w-full ${title.split(" ").reduce((a, b) => a.length > b.length ? a : b, "").length > 22 ? "break-all" : "break-words"}`}>{title}</p>
       </div>
       {isOpen && (
         <motion.div
