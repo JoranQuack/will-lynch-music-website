@@ -107,7 +107,7 @@ export default function ArrangementBlock({
                     <p className="bg-greeny">{purpose}</p>
                     <p className="bg-pinky">
                       {difficulty[0].toUpperCase() + difficulty.substring(1)}{" "}
-                      Difficulty
+                      {difficulty === "medium" ? "Difficulty" : ""}
                     </p>
                     <p className="bg-greeny">
                       {tempo[0].toUpperCase() + tempo.substring(1)} Tempo

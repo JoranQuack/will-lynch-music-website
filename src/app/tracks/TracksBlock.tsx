@@ -42,7 +42,11 @@ export default function TracksBlock({
         onClick={() => setIsOpen(true)}
       >
         <IconMusic className="w-10" />
-        <p className={`w-full ${title.split(" ").reduce((a, b) => a.length > b.length ? a : b, "").length > 22 ? "break-all" : "break-words"}`}>{title}</p>
+        <p
+          className={`w-full ${title.split(" ").reduce((a, b) => (a.length > b.length ? a : b), "").length > 22 ? "break-all" : "break-words"}`}
+        >
+          {title}
+        </p>
       </div>
       {isOpen && (
         <motion.div
@@ -86,7 +90,7 @@ export default function TracksBlock({
                   <p className="bg-greeny">{purpose}</p>
                   <p className="bg-pinky">
                     {difficulty[0].toUpperCase() + difficulty.substring(1)}{" "}
-                    Difficulty
+                    {difficulty === "medium" ? "Difficulty" : ""}
                   </p>
                   <p className="bg-greeny">
                     {tempo[0].toUpperCase() + tempo.substring(1)} Tempo
