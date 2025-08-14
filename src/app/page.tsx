@@ -140,7 +140,7 @@ export default function Home() {
             width={1000}
             height={1000}
             alt="performer"
-            className="object-scale-down object-right-bottom lg:w-[40vw]"
+            className="object-scale-down object-right-bottom lg:w-[30vw] 2xl:w-[20vw]"
           />
         </div>
       </section>
