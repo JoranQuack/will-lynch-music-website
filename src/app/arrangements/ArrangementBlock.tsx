@@ -53,7 +53,7 @@ export default function ArrangementBlock({
           alt={src}
           className="rounded-xl"
         />
-        <p className="break-words">{title}</p>
+        <p className="wrap-break-word">{title}</p>
       </div>
       {isOpen && (
         <motion.div
@@ -65,12 +65,12 @@ export default function ArrangementBlock({
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="w-full cursor-default rounded-xl bg-white p-3 lg:w-fit lg:max-w-screen-lg"
+            className="w-full cursor-default rounded-xl bg-white p-3 lg:w-fit lg:max-w-5xl"
             onClick={handleChildClick}
           >
             <div className="flex w-full justify-end">
               <button
-                className="text-dark duration-500 hover:opacity-50"
+                className="text-dark duration-500 hover:opacity-50 cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 <IconX className="h-full" />

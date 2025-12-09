@@ -82,7 +82,7 @@ const ContactForm: FC = () => {
           <input
             placeholder=" "
             type="text"
-            className="w-full"
+            className="w-full outline-none"
             id="firstName"
             name="firstName"
             onChange={formik.handleChange}
@@ -98,7 +98,7 @@ const ContactForm: FC = () => {
           <input
             placeholder=" "
             type="text"
-            className="w-full"
+            className="w-full outline-none"
             id="lastName"
             name="lastName"
             onChange={formik.handleChange}
@@ -115,7 +115,7 @@ const ContactForm: FC = () => {
         <input
           placeholder=" "
           type="email"
-          className="w-full"
+          className="w-full outline-none"
           id="email"
           name="email"
           onChange={formik.handleChange}
@@ -134,7 +134,8 @@ const ContactForm: FC = () => {
           name="message"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.message}
+                  value={formik.values.message}
+            className="h-32 w-full rounded-2xl resize-none outline-none"
         />
         {formik.touched.message && formik.errors.message ? (
           <div className="text-red-500">{formik.errors.message}</div>

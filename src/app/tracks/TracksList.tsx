@@ -31,7 +31,7 @@ export default function TracksList({ tracks }: TracksListProps) {
         <input
           type="text"
           placeholder="Search for a learning track"
-          className="w-full rounded-xl border-none bg-white p-3 text-dark lg:w-1/4"
+          className="w-full rounded-xl border-none bg-white p-3 text-dark lg:w-1/4 outline-none"
           value={query}
           onChange={handleChange}
         />

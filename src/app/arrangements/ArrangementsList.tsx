@@ -33,7 +33,7 @@ export default function ArrangementsList({
         <input
           type="text"
           placeholder="Search for an arrangement"
-          className="w-full rounded-xl border-none bg-white p-3 text-dark lg:w-1/4"
+          className="w-full rounded-xl border-none bg-white p-3 text-dark lg:w-1/4 outline-none"
           value={query}
           onChange={handleChange}
         />
