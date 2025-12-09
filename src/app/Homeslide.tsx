@@ -156,7 +156,7 @@ export default function Homeslide() {
       </div>
 
       <div
-        className={`absolute bottom-0 z-20 h-28 w-screen duration-500 ${slide === 3 ? "opacity-100" : "opacity-0"} bg-gradient-to-b from-transparent to-dark`}
+        className={`absolute bottom-0 z-20 h-28 w-screen duration-500 ${slide === 3 ? "opacity-100" : "opacity-0"} bg-linear-to-b from-transparent to-dark`}
       ></div>
 
       <div className="absolute bottom-20 z-30 flex h-3 w-full justify-center px-8 lg:justify-start lg:px-36">
